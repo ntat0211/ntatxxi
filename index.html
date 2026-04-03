@@ -28,9 +28,17 @@
         }
         .nav-brand{font-size:13px;font-weight:800;letter-spacing:3px;text-transform:uppercase;}
         .nav-brand span{color:var(--red);}
+        .nav-right{display:flex;align-items:center;gap:32px;}
         .nav-links{display:flex;gap:32px;list-style:none;}
         .nav-links a{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gray);text-decoration:none;transition:color .2s;}
         .nav-links a:hover{color:var(--red);}
+        
+        .lang-switch{display:flex;gap:8px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;}
+        .lang-btn{cursor:pointer;color:var(--gray);transition:color .2s;}
+        .lang-btn.active{color:var(--red);}
+        .lang-btn:hover{color:var(--red);}
+
+        .menu-toggle{display:none;font-size:24px;cursor:pointer;}
 
         /* HERO */
         .hero{
@@ -117,7 +125,8 @@
         .tool-card{background:#fff;padding:28px 16px;text-align:center;transition:all .3s;cursor:default;}
         .tool-card:hover{background:var(--red);}
         .tool-card:hover .tool-name,.tool-card:hover .tool-cat{color:#fff;}
-        .tool-icon{font-size:24px;margin-bottom:10px;height:40px;display:flex;align-items:center;justify-content:center;}
+        .tool-icon{margin-bottom:10px;height:40px;display:flex;align-items:center;justify-content:center;}
+        .tool-icon img{max-height:32px;max-width:32px;object-fit:contain;}
         .tool-name{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;}
         .tool-cat{font-size:9px;color:var(--gray);letter-spacing:1px;text-transform:uppercase;}
 
@@ -165,50 +174,64 @@
         .contact-link{display:flex;align-items:center;gap:20px;text-decoration:none;color:#fff;padding:20px 24px;border:1px solid rgba(255,255,255,0.2);transition:all .3s;}
         .contact-link:hover{background:rgba(255,255,255,0.1);transform:translateX(8px);}
         .cl-icon{font-size:18px;width:40px;text-align:center;}
-        .cl-label{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:3px;}
-        .cl-value{font-size:13px;font-weight:600;}
-        .contact-form{display:flex;flex-direction:column;gap:12px;}
-        .cf-input{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;padding:16px 20px;font-family:'Montserrat',sans-serif;font-size:12px;letter-spacing:.5px;transition:all .3s;outline:none;}
-        .cf-input::placeholder{color:rgba(255,255,255,0.4);}
-        .cf-input:focus{border-color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.15);}
-        .cf-submit{background:#fff;color:var(--red);padding:18px;font-size:10px;font-weight:800;letter-spacing:3px;text-transform:uppercase;border:none;cursor:pointer;transition:all .3s;font-family:'Montserrat',sans-serif;}
-        .cf-submit:hover{background:var(--dark);color:#fff;transform:translateY(-2px);}
+        .cl-label{font-size:9px;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
+        .cl-value{font-size:13px;font-weight:700;}
+
+        .contact-form{background:#fff;padding:48px;border-radius:4px;}
+        .cf-input{width:100%;background:var(--light);border:1px solid var(--border);padding:16px;margin-bottom:16px;font-family:inherit;font-size:13px;outline:none;transition:.3s;}
+        .cf-input:focus{border-color:var(--red);}
+        .cf-submit{width:100%;background:var(--red);color:#fff;border:none;padding:18px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;cursor:pointer;transition:.3s;}
+        .cf-submit:hover{background:#111;}
 
         /* FOOTER */
-        footer{background:var(--dark);color:rgba(255,255,255,0.3);padding:28px 64px;display:flex;justify-content:space-between;align-items:center;}
-        .footer-brand{font-size:12px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.6);}
+        footer{padding:60px 64px;background:#fff;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+        .footer-brand{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:2px;}
         .footer-brand span{color:var(--red);}
-        footer p{font-size:10px;letter-spacing:1px;}
-
-        /* ANIMATIONS */
-        .fade-in{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease;}
-        .fade-in.visible{opacity:1;transform:translateY(0);}
+        footer p{font-size:10px;color:var(--gray);font-weight:600;text-transform:uppercase;letter-spacing:1px;}
 
         /* RESPONSIVE */
         @media(max-width:1024px){
             nav{padding:16px 32px;}
-            .hero{padding:100px 32px 60px;gap:50px;}
-            section.content{padding:70px 32px;}
-            footer{padding:24px 32px;}
-        }
-        @media(max-width:768px){
-            nav{padding:14px 20px;}
-            .nav-links{display:none;}
-            .hero{flex-direction:column;text-align:center;padding:90px 20px 50px;gap:36px;}
+            .hero{flex-direction:column;text-align:center;gap:48px;padding:140px 32px 80px;}
             .hero-tag{justify-content:center;}
-            .hero-photo{width:200px;height:260px;}
-            .hero-btns{justify-content:center;flex-wrap:wrap;}
-            .hero-stats{justify-content:center;gap:32px;}
-            section.content{padding:56px 20px;}
-            .skills-grid,.tools-grid,.results-grid,.brands-row{grid-template-columns:1fr 1fr;}
-            .exp-row,.edu-row{grid-template-columns:1fr;}
-            .contact-grid{grid-template-columns:1fr;gap:48px;}
-            footer{flex-direction:column;gap:12px;text-align:center;padding:24px 20px;}
-            .sec-title{font-size:26px;}
+            .hero-btns{justify-content:center;}
+            .hero-stats{justify-content:center;}
+            .skills-grid{grid-template-columns:1fr 1fr;}
+            .tools-grid{grid-template-columns:repeat(4,1fr);}
+            .results-grid{grid-template-columns:1fr 1fr;}
+            .brands-row{grid-template-columns:1fr 1fr;}
         }
+
+        @media(max-width:768px){
+            .menu-toggle{display:block;}
+            .nav-links{
+                display:none;
+                position:absolute;top:100%;left:0;width:100%;
+                background:#fff;flex-direction:column;padding:32px;
+                gap:24px;border-bottom:1px solid var(--border);
+                box-shadow:0 10px 30px rgba(0,0,0,0.05);
+            }
+            .nav-links.active{display:flex;}
+            .nav-right{gap:16px;}
+            .hero-photo{width:260px;height:330px;}
+            .hero-stats{flex-wrap:wrap;gap:32px;}
+            section.content{padding:64px 32px;}
+            .sec-title{font-size:28px;}
+            .contact-grid{grid-template-columns:1fr;gap:48px;}
+            .contact-form{padding:32px;}
+            footer{flex-direction:column;gap:24px;text-align:center;}
+        }
+
         @media(max-width:480px){
             .skills-grid,.tools-grid,.results-grid,.brands-row{grid-template-columns:1fr;}
+            .hero-photo{width:220px;height:280px;}
+            .hero-stats{gap:24px;}
+            .stat-num{font-size:28px;}
         }
+
+        /* ANIMATIONS */
+        .fade-in{opacity:0;transform:translateY(30px);transition:all .8s ease-out;}
+        .fade-in.visible{opacity:1;transform:translateY(0);}
     </style>
 </head>
 <body>
@@ -216,46 +239,54 @@
 <!-- NAV -->
 <nav>
     <div class="nav-brand">Ngo Tran <span>Anh Thu</span></div>
-    <ul class="nav-links">
-        <li><a href="#expertise">Expertise</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#results">Results</a></li>
-        <li><a href="#brands">Brands</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div class="nav-right">
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#expertise" data-en="Expertise" data-vi="Chuyên môn">Expertise</a></li>
+            <li><a href="#experience" data-en="Experience" data-vi="Kinh nghiệm">Experience</a></li>
+            <li><a href="#results" data-en="Results" data-vi="Kết quả">Results</a></li>
+            <li><a href="#brands" data-en="Brands" data-vi="Thương hiệu">Brands</a></li>
+            <li><a href="#contact" data-en="Contact" data-vi="Liên hệ">Contact</a></li>
+        </ul>
+        <div class="lang-switch">
+            <span class="lang-btn active" onclick="setLang('en')">EN</span>
+            <span style="color:var(--border)">|</span>
+            <span class="lang-btn" onclick="setLang('vi')">VI</span>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
     <div class="hero-left">
         <div class="hero-photo">
-            <img src="https://picsum.photos/seed/portrait-professional/300/380" alt="Ngo Tran Anh Thu">
+            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663381881482/WKBftGrKvylUEOWd.webp" alt="Ngo Tran Anh Thu">
         </div>
     </div>
     <div class="hero-right">
-        <div class="hero-tag">Senior Digital Marketer</div>
+        <div class="hero-tag" data-en="Senior Digital Marketer" data-vi="Chuyên viên Marketing Kỹ thuật số">Senior Digital Marketer</div>
         <h1 style="font-size:clamp(32px,5vw,58px);font-weight:900;text-transform:uppercase;letter-spacing:-2px;line-height:1.05;margin-bottom:24px;">
             Ngo Tran<br><span style="color:var(--red);">Anh Thu</span>
         </h1>
-        <p class="hero-summary">
-            Results-driven marketer với hơn <strong>4 năm kinh nghiệm</strong> thực chiến trên <strong>Meta & Google Ads</strong>, optimizing conversion funnels and generating quality leads for <strong>Ordinaire, Bonario & Reverie</strong>.
+        <p class="hero-summary" id="heroSummary">
+            Results-driven marketer with over <strong>4 years of experience</strong> in <strong>Meta & Google Ads</strong>, optimizing conversion funnels and generating quality leads for <strong>Ordinaire, Bonario & Reverie</strong>.
         </p>
         <div class="hero-btns">
-            <a href="#contact" class="btn-red">Get In Touch</a>
-            <a href="#experience" class="btn-ghost">View Experience</a>
+            <a href="#contact" class="btn-red" data-en="Get In Touch" data-vi="Liên hệ ngay">Get In Touch</a>
+            <a href="#experience" class="btn-ghost" data-en="View Experience" data-vi="Xem kinh nghiệm">View Experience</a>
         </div>
         <div class="hero-stats">
             <div>
                 <div class="stat-num">4+</div>
-                <div class="stat-label">Years Experience</div>
+                <div class="stat-label" data-en="Years Experience" data-vi="Năm kinh nghiệm">Years Experience</div>
             </div>
             <div>
                 <div class="stat-num">3</div>
-                <div class="stat-label">Brands Managed</div>
+                <div class="stat-label" data-en="Brands Managed" data-vi="Thương hiệu">Brands Managed</div>
             </div>
             <div>
                 <div class="stat-num">↑40%</div>
-                <div class="stat-label">Avg. ROAS Lift</div>
+                <div class="stat-label" data-en="Avg. ROAS Lift" data-vi="Tăng trưởng ROAS">Avg. ROAS Lift</div>
             </div>
         </div>
     </div>
@@ -271,44 +302,26 @@
 <!-- EXPERTISE -->
 <section class="content expertise" id="expertise">
     <div class="section-inner">
-        <div class="sec-tag">Core Expertise</div>
-        <h2 class="sec-title">What I Do Best</h2>
+        <div class="sec-tag" data-en="Core Expertise" data-vi="Chuyên môn cốt lõi">Core Expertise</div>
+        <h2 class="sec-title" data-en="What I Do Best" data-vi="Thế mạnh của tôi">What I Do Best</h2>
         <div class="skills-grid">
             <div class="skill-card fade-in">
                 <div class="sk-num">01</div>
-                <div class="sk-title">Paid Advertising</div>
-                <p class="sk-desc">End-to-end campaign management from strategy to execution, optimizing for ROI across paid channels.</p>
+                <div class="sk-title" data-en="Paid Advertising" data-vi="Quảng cáo trả phí">Paid Advertising</div>
+                <p class="sk-desc" data-en="End-to-end campaign management from strategy to execution, optimizing for ROI across paid channels." data-vi="Quản lý chiến dịch toàn diện từ chiến lược đến thực thi, tối ưu hóa ROI trên các kênh trả phí.">End-to-end campaign management from strategy to execution, optimizing for ROI across paid channels.</p>
                 <div class="tags"><span class="tag">Meta Ads</span><span class="tag">Google Ads</span><span class="tag">Retargeting</span></div>
             </div>
             <div class="skill-card fade-in">
                 <div class="sk-num">02</div>
-                <div class="sk-title">Analytics & Attribution</div>
-                <p class="sk-desc">Data-driven decisions using advanced analytics for precise attribution and campaign insights.</p>
+                <div class="sk-title" data-en="Analytics & Attribution" data-vi="Phân tích & Đo lường">Analytics & Attribution</div>
+                <p class="sk-desc" data-en="Data-driven decisions using advanced analytics for precise attribution and campaign insights." data-vi="Đưa ra quyết định dựa trên dữ liệu bằng cách sử dụng phân tích nâng cao để đo lường chính xác.">Data-driven decisions using advanced analytics for precise attribution and campaign insights.</p>
                 <div class="tags"><span class="tag">GA4</span><span class="tag">Meta Pixel</span><span class="tag">GTM</span></div>
             </div>
             <div class="skill-card fade-in">
                 <div class="sk-num">03</div>
-                <div class="sk-title">Conversion Optimization</div>
-                <p class="sk-desc">Converting traffic into qualified leads through strategic landing page and funnel optimization.</p>
+                <div class="sk-title" data-en="Conversion Optimization" data-vi="Tối ưu hóa chuyển đổi">Conversion Optimization</div>
+                <p class="sk-desc" data-en="Converting traffic into qualified leads through strategic landing page and funnel optimization." data-vi="Chuyển đổi lưu lượng truy cập thành khách hàng tiềm năng thông qua tối ưu hóa trang đích và phễu.">Converting traffic into qualified leads through strategic landing page and funnel optimization.</p>
                 <div class="tags"><span class="tag">A/B Testing</span><span class="tag">CRO</span><span class="tag">UX</span></div>
-            </div>
-            <div class="skill-card fade-in">
-                <div class="sk-num">04</div>
-                <div class="sk-title">Lead Generation</div>
-                <p class="sk-desc">Building scalable lead pipelines through targeted campaigns, CRM, and funnel optimization.</p>
-                <div class="tags"><span class="tag">Lead Ads</span><span class="tag">CRM</span><span class="tag">Automation</span></div>
-            </div>
-            <div class="skill-card fade-in">
-                <div class="sk-num">05</div>
-                <div class="sk-title">Market Research</div>
-                <p class="sk-desc">In-depth competitor analysis and trend monitoring to keep brands ahead in the market.</p>
-                <div class="tags"><span class="tag">Competitor Analysis</span><span class="tag">Trends</span></div>
-            </div>
-            <div class="skill-card fade-in">
-                <div class="sk-num">06</div>
-                <div class="sk-title">Creative Strategy</div>
-                <p class="sk-desc">Data-backed creative briefs and content strategies that maximize ad performance.</p>
-                <div class="tags"><span class="tag">Copywriting</span><span class="tag">Creative Brief</span></div>
             </div>
         </div>
     </div>
@@ -317,8 +330,8 @@
 <!-- EXPERIENCE -->
 <section class="content experience" id="experience">
     <div class="section-inner">
-        <div class="sec-tag">Work History</div>
-        <h2 class="sec-title">Experience</h2>
+        <div class="sec-tag" data-en="Work History" data-vi="Lịch sử làm việc">Work History</div>
+        <h2 class="sec-title" data-en="Experience" data-vi="Kinh nghiệm">Experience</h2>
         <div class="exp-row fade-in">
             <div>
                 <div class="exp-date">2022 — Present</div>
@@ -326,42 +339,10 @@
             </div>
             <div>
                 <div class="exp-jobtitle">Senior Digital Marketing Specialist</div>
-                <div class="exp-badge">Current Role</div>
+                <div class="exp-badge" data-en="Current Role" data-vi="Hiện tại">Current Role</div>
                 <ul class="exp-bullets">
-                    <li>Managed <strong>Meta & Google Ads</strong> with monthly budget of $15,000+, achieving consistent <strong>ROAS above 4x</strong></li>
-                    <li>Reduced cost-per-lead by <strong>38%</strong> through audience segmentation and funnel restructuring</li>
-                    <li>Led end-to-end campaign strategy for new product launches across digital channels</li>
-                    <li>Built reporting dashboards in <strong>GA4 + Looker Studio</strong> for real-time performance monitoring</li>
-                </ul>
-            </div>
-        </div>
-        <div class="exp-row fade-in">
-            <div>
-                <div class="exp-date">2021 — 2022</div>
-                <div class="exp-co">Bonario</div>
-            </div>
-            <div>
-                <div class="exp-jobtitle">Digital Marketing Executive</div>
-                <div class="exp-badge">Full-Time</div>
-                <ul class="exp-bullets">
-                    <li>Scaled paid social from $3k to $10k/month while maintaining target <strong>CPA benchmarks</strong></li>
-                    <li>Implemented <strong>conversion tracking</strong> via Meta Pixel + GTM, improving attribution accuracy</li>
-                    <li>Collaborated with creative team on ad copy and visual assets, increasing CTR by <strong>25%</strong></li>
-                </ul>
-            </div>
-        </div>
-        <div class="exp-row fade-in">
-            <div>
-                <div class="exp-date">2020 — 2021</div>
-                <div class="exp-co">Reverie</div>
-            </div>
-            <div>
-                <div class="exp-jobtitle">Marketing Coordinator</div>
-                <div class="exp-badge">Full-Time</div>
-                <ul class="exp-bullets">
-                    <li>Assisted in planning and executing paid campaigns on <strong>Facebook & Instagram</strong></li>
-                    <li>Managed content calendar and community engagement across social platforms</li>
-                    <li>Supported launch campaigns for seasonal collections, contributing to <strong>20% revenue growth</strong></li>
+                    <li data-en="Managed Meta & Google Ads with monthly budget of $15,000+, achieving consistent ROAS above 4x" data-vi="Quản lý Meta & Google Ads với ngân sách hàng tháng trên $15,000, duy trì ROAS trên 4x">Managed <strong>Meta & Google Ads</strong> with monthly budget of $15,000+, achieving consistent <strong>ROAS above 4x</strong></li>
+                    <li data-en="Reduced cost-per-lead by 38% through audience segmentation and funnel restructuring" data-vi="Giảm chi phí mỗi khách hàng tiềm năng xuống 38% thông qua phân khúc đối tượng">Reduced cost-per-lead by <strong>38%</strong> through audience segmentation and funnel restructuring</li>
                 </ul>
             </div>
         </div>
@@ -371,124 +352,18 @@
 <!-- TOOLS -->
 <section class="content tools-section" id="tools">
     <div class="section-inner">
-        <div class="sec-tag">Tech Stack</div>
-        <h2 class="sec-title">Tools & Platforms</h2>
+        <div class="sec-tag" data-en="Tech Stack" data-vi="Công cụ sử dụng">Tech Stack</div>
+        <h2 class="sec-title" data-en="Tools & Platforms" data-vi="Công cụ & Nền tảng">Tools & Platforms</h2>
         <div class="tools-grid">
-            <div class="tool-card fade-in"><div class="tool-icon">📊</div><div class="tool-name">Meta Ads</div><div class="tool-cat">Paid Social</div></div>
-            <div class="tool-card fade-in"><div class="tool-icon">🔍</div><div class="tool-name">Google Ads</div><div class="tool-cat">Paid Search</div></div>
-            <div class="tool-card fade-in"><div class="tool-icon">📈</div><div class="tool-name">GA4</div><div class="tool-cat">Analytics</div></div>
-            <div class="tool-card fade-in"><div class="tool-icon">🎯</div><div class="tool-name">GTM</div><div class="tool-cat">Tag Management</div></div>
-            <div class="tool-card fade-in"><div class="tool-icon">📉</div><div class="tool-name">Looker Studio</div><div class="tool-cat">Reporting</div></div>
-            <div class="tool-card fade-in"><div class="tool-icon">✉️</div><div class="tool-name">Mailchimp</div><div class="tool-cat">Email Marketing</div></div>
-            <div class="tool-card fade-in"><div class="tool-icon">🗂️</div><div class="tool-name">HubSpot</div><div class="tool-cat">CRM</div></div>
-            <div class="tool-card fade-in"><div class="tool-icon">🖼️</div><div class="tool-name">Canva</div><div class="tool-cat">Creative</div></div>
-            <div class="tool-card fade-in"><div class="tool-icon">📋</div><div class="tool-name">Notion</div><div class="tool-cat">Project Mgmt</div></div>
-            <div class="tool-card fade-in"><div class="tool-icon">📊</div><div class="tool-name">Excel / Sheets</div><div class="tool-cat">Data Analysis</div></div>
-        </div>
-    </div>
-</section>
-
-<!-- RESULTS -->
-<section class="content results" id="results">
-    <div class="section-inner">
-        <div class="sec-tag">By The Numbers</div>
-        <h2 class="sec-title">Key Results</h2>
-        <div class="results-grid">
-            <div class="result-card fade-in">
-                <div class="result-num">4x+</div>
-                <div class="result-label">Average ROAS</div>
-                <div class="result-desc">Consistent return on ad spend maintained across Meta & Google campaigns</div>
-            </div>
-            <div class="result-card fade-in">
-                <div class="result-num">38%</div>
-                <div class="result-label">CPL Reduction</div>
-                <div class="result-desc">Cost-per-lead reduced through audience segmentation and funnel restructuring</div>
-            </div>
-            <div class="result-card fade-in">
-                <div class="result-num">$15k</div>
-                <div class="result-label">Monthly Ad Spend</div>
-                <div class="result-desc">Managed monthly paid media budget across multi-channel campaigns</div>
-            </div>
-            <div class="result-card fade-in">
-                <div class="result-num">+25%</div>
-                <div class="result-label">CTR Improvement</div>
-                <div class="result-desc">Click-through rate uplift from creative strategy and ad copy optimization</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- BRANDS -->
-<section class="content brands-section" id="brands">
-    <div class="section-inner">
-        <div class="sec-tag">Portfolio</div>
-        <h2 class="sec-title">Brands I've Grown</h2>
-        <div class="brands-row">
-            <div class="brand-card fade-in">
-                <div class="brand-logo">Ordinaire</div>
-                <div class="brand-sector">Lifestyle & Wellness</div>
-                <p class="brand-desc">Led full-funnel performance marketing strategy. Scaled paid acquisition while building brand equity through data-driven creative testing.</p>
-                <div class="brand-results">
-                    <div><div class="br-num">4x</div><div class="br-label">ROAS</div></div>
-                    <div><div class="br-num">−38%</div><div class="br-label">CPL</div></div>
-                </div>
-            </div>
-            <div class="brand-card fade-in">
-                <div class="brand-logo">Bonario</div>
-                <div class="brand-sector">Fashion & Retail</div>
-                <p class="brand-desc">Scaled paid social from ground up. Built attribution infrastructure and led creative strategy that drove measurable revenue contribution.</p>
-                <div class="brand-results">
-                    <div><div class="br-num">3.3x</div><div class="br-label">Budget Scale</div></div>
-                    <div><div class="br-num">+25%</div><div class="br-label">CTR</div></div>
-                </div>
-            </div>
-            <div class="brand-card fade-in">
-                <div class="brand-logo">Reverie</div>
-                <div class="brand-sector">Home & Interior</div>
-                <p class="brand-desc">Supported digital campaigns for seasonal launches. Managed organic and paid touchpoints that contributed to a strong revenue growth period.</p>
-                <div class="brand-results">
-                    <div><div class="br-num">+20%</div><div class="br-label">Revenue</div></div>
-                    <div><div class="br-num">2</div><div class="br-label">Launches</div></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- EDUCATION -->
-<section class="content education" id="education">
-    <div class="section-inner">
-        <div class="sec-tag">Academic Background</div>
-        <h2 class="sec-title">Education</h2>
-        <div class="edu-row fade-in">
-            <div>
-                <div class="edu-year">2016 — 2020</div>
-            </div>
-            <div>
-                <div class="edu-degree">Bachelor of Business Administration</div>
-                <div class="edu-school">University of Economics Ho Chi Minh City (UEH)</div>
-                <p class="edu-note">Major in Marketing. Graduated with honors. Developed strong foundation in consumer behavior, marketing strategy, and digital analytics.</p>
-            </div>
-        </div>
-        <div class="edu-row fade-in">
-            <div>
-                <div class="edu-year">2022</div>
-            </div>
-            <div>
-                <div class="edu-degree">Meta Blueprint Certification</div>
-                <div class="edu-school">Meta (Facebook)</div>
-                <p class="edu-note">Certified in Meta Ads buying and planning. Covers campaign objectives, audience targeting, creative best practices, and measurement.</p>
-            </div>
-        </div>
-        <div class="edu-row fade-in">
-            <div>
-                <div class="edu-year">2023</div>
-            </div>
-            <div>
-                <div class="edu-degree">Google Ads Certification</div>
-                <div class="edu-school">Google Skillshop</div>
-                <p class="edu-note">Certified across Search, Display, and Performance Max. Demonstrates proficiency in campaign setup, bidding strategies, and optimization.</p>
-            </div>
+            <div class="tool-card fade-in"><div class="tool-icon"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663381881482/BHztJGjVluhaYpjZ.png" alt="Meta"></div><div class="tool-name">Meta Ads</div><div class="tool-cat">Paid Social</div></div>
+            <div class="tool-card fade-in"><div class="tool-icon"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663381881482/JeiRsRvXvjVbZJqE.png" alt="Google Ads"></div><div class="tool-name">Google Ads</div><div class="tool-cat">Paid Search</div></div>
+            <div class="tool-card fade-in"><div class="tool-icon"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663381881482/xpReDZuDZdPKGdsX.png" alt="GA4"></div><div class="tool-name">GA4</div><div class="tool-cat">Analytics</div></div>
+            <div class="tool-card fade-in"><div class="tool-icon"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663381881482/OnkIbyeLCFlMljPR.png" alt="GTM"></div><div class="tool-name">GTM</div><div class="tool-cat">Tag Management</div></div>
+            <div class="tool-card fade-in"><div class="tool-icon"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663381881482/HUVZTPiXkwmOEThS.png" alt="Looker Studio"></div><div class="tool-name">Looker Studio</div><div class="tool-cat">Reporting</div></div>
+            <div class="tool-card fade-in"><div class="tool-icon"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663381881482/TZMIYXeJXhEVbbmT.png" alt="Mailchimp"></div><div class="tool-name">Mailchimp</div><div class="tool-cat">Email</div></div>
+            <div class="tool-card fade-in"><div class="tool-icon"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663381881482/IwHGpEIcjsVOEftf.png" alt="HubSpot"></div><div class="tool-name">HubSpot</div><div class="tool-cat">CRM</div></div>
+            <div class="tool-card fade-in"><div class="tool-icon"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663381881482/bAdermeAhstQCMos.png" alt="Canva"></div><div class="tool-name">Canva</div><div class="tool-cat">Creative</div></div>
+            <div class="tool-card fade-in"><div class="tool-icon"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663381881482/ulYuOttvVaUnBRrA.png" alt="Notion"></div><div class="tool-name">Notion</div><div class="tool-cat">Project Mgmt</div></div>
         </div>
     </div>
 </section>
@@ -498,9 +373,9 @@
     <div class="section-inner">
         <div class="contact-grid">
             <div>
-                <div class="sec-tag">Let's Talk</div>
-                <h2 class="sec-title">Open to New Opportunities</h2>
-                <p class="contact-copy">Open to new opportunities, senior roles, and interesting marketing challenges in Ho Chi Minh City.<br><br>Let's discuss how I can drive growth through performance marketing.</p>
+                <div class="sec-tag" data-en="Get In Touch" data-vi="Liên hệ">Get In Touch</div>
+                <h2 class="sec-title" data-en="Open to New Opportunities" data-vi="Sẵn sàng cho cơ hội mới">Open to New Opportunities</h2>
+                <p class="contact-copy" data-en="Open to new opportunities, senior roles, and interesting marketing challenges in Ho Chi Minh City." data-vi="Sẵn sàng cho các cơ hội mới, vị trí cấp cao và những thử thách marketing thú vị tại TP. Hồ Chí Minh.">Open to new opportunities, senior roles, and interesting marketing challenges in Ho Chi Minh City.</p>
                 <div class="contact-links">
                     <a href="mailto:ntat0211@gmail.com" class="contact-link">
                         <span class="cl-icon">✉</span>
@@ -510,19 +385,13 @@
                         <span class="cl-icon">in</span>
                         <div><div class="cl-label">LinkedIn</div><div class="cl-value">linkedin.com/in/ntatxxi</div></div>
                     </a>
-                    <a href="#" class="contact-link">
-                        <span class="cl-icon">📍</span>
-                        <div><div class="cl-label">Location</div><div class="cl-value">Ho Chi Minh City, Vietnam</div></div>
-                    </a>
                 </div>
             </div>
             <div>
                 <form class="contact-form" onsubmit="handleForm(event)">
                     <input class="cf-input" type="text" placeholder="Your Name" required>
                     <input class="cf-input" type="email" placeholder="Your Email" required>
-                    <input class="cf-input" type="text" placeholder="Subject">
-                    <textarea class="cf-input" rows="4" placeholder="Your Message" required style="resize:vertical;"></textarea>
-                    <button type="submit" class="cf-submit">Send Message →</button>
+                    <button type="submit" class="cf-submit" data-en="Send Message →" data-vi="Gửi tin nhắn →">Send Message →</button>
                 </form>
             </div>
         </div>
@@ -536,6 +405,41 @@
 </footer>
 
 <script>
+    // Mobile Menu Toggle
+    function toggleMenu() {
+        document.getElementById('navLinks').classList.toggle('active');
+    }
+
+    // Language Switcher
+    const translations = {
+        en: {
+            heroSummary: 'Results-driven marketer with over <strong>4 years of experience</strong> in <strong>Meta & Google Ads</strong>, optimizing conversion funnels and generating quality leads for <strong>Ordinaire, Bonario & Reverie</strong>.'
+        },
+        vi: {
+            heroSummary: 'Chuyên viên Marketing hướng tới kết quả với hơn <strong>4 năm kinh nghiệm</strong> thực chiến trên <strong>Meta & Google Ads</strong>, tối ưu hóa phễu chuyển đổi và tạo ra khách hàng tiềm năng chất lượng cho <strong>Ordinaire, Bonario & Reverie</strong>.'
+        }
+    };
+
+    function setLang(lang) {
+        // Update active button
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
+        });
+
+        // Update elements with data attributes
+        document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+            el.textContent = el.getAttribute('data-' + lang);
+        });
+
+        // Update special elements
+        if (translations[lang].heroSummary) {
+            document.getElementById('heroSummary').innerHTML = translations[lang].heroSummary;
+        }
+
+        // Close mobile menu if open
+        document.getElementById('navLinks').classList.remove('active');
+    }
+
     // Scroll animations
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -556,24 +460,11 @@
         btn.style.color = '#fff';
         setTimeout(() => {
             btn.textContent = 'Send Message →';
-            btn.style.background = '#fff';
-            btn.style.color = 'var(--red)';
+            btn.style.background = 'var(--red)';
+            btn.style.color = '#fff';
             e.target.reset();
         }, 3000);
     }
-
-    // Nav active state
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-links a');
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(s => {
-            if (window.scrollY >= s.offsetTop - 100) current = s.getAttribute('id');
-        });
-        navLinks.forEach(a => {
-            a.style.color = a.getAttribute('href') === '#' + current ? 'var(--red)' : '';
-        });
-    });
 </script>
 </body>
 </html>
