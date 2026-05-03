@@ -32,7 +32,7 @@
         .nav-links{display:flex;gap:32px;list-style:none;}
         .nav-links a{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gray);text-decoration:none;transition:color .2s;}
         .nav-links a:hover{color:var(--red);}
-        
+
         .lang-switch{display:flex;gap:8px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;}
         .lang-btn{cursor:pointer;color:var(--gray);transition:color .2s;}
         .lang-btn.active{color:var(--red);}
@@ -94,6 +94,17 @@
         .sec-tag::before{content:'';width:28px;height:2px;background:var(--red);}
         .sec-title{font-size:34px;font-weight:800;text-transform:uppercase;letter-spacing:-.5px;margin-bottom:52px;}
 
+        /* RESULTS (moved up — before expertise) */
+        .results{background:#111;color:#fff;}
+        .results .sec-tag{color:var(--red);}
+        .results .sec-title{color:#fff;}
+        .results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
+        .result-card{padding:48px 32px;border:1px solid rgba(255,255,255,0.06);transition:all .3s;}
+        .result-card:hover{background:rgba(221,22,22,0.08);border-color:rgba(221,22,22,0.3);}
+        .result-num{font-size:52px;font-weight:900;color:var(--red);line-height:1;margin-bottom:12px;letter-spacing:-3px;}
+        .result-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
+        .result-desc{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.7;}
+
         /* EXPERTISE */
         .expertise{background:var(--light);}
         .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
@@ -119,7 +130,25 @@
         .exp-bullets li::before{content:'—';color:var(--red);position:absolute;left:0;font-weight:700;}
         .exp-bullets strong{color:var(--dark);font-weight:700;}
 
-        /* TOOLS */
+        /* BRANDS — all 4 in one row */
+        .brands-section{background:var(--cream);}
+        .brands-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
+        .brand-card{background:#fff;padding:36px 28px;transition:all .3s;}
+        .brand-card:hover{box-shadow:0 20px 60px rgba(0,0,0,.08);transform:translateY(-4px);}
+        .brand-header{display:flex;align-items:center;gap:14px;margin-bottom:16px;}
+        .brand-logo-img{width:36px;height:36px;border-radius:6px;object-fit:contain;background:var(--light);padding:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:18px;}
+        .brand-logo-img img{width:100%;height:100%;object-fit:contain;}
+        .brand-logo-placeholder{width:36px;height:36px;border-radius:6px;background:var(--light);border:2px dashed var(--border);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;cursor:pointer;transition:all .2s;}
+        .brand-logo-placeholder:hover{border-color:var(--red);background:rgba(221,22,22,0.04);}
+        .brand-logo{font-size:18px;font-weight:900;text-transform:uppercase;letter-spacing:-0.5px;position:relative;display:inline-block;}
+        .brand-logo::after{content:'';position:absolute;bottom:-6px;left:0;width:24px;height:3px;background:var(--red);}
+        .brand-sector{font-size:8px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:16px;margin-top:14px;}
+        .brand-desc{font-size:11px;color:var(--gray);line-height:1.8;margin-bottom:20px;}
+        .brand-results{display:flex;gap:24px;}
+        .br-num{font-size:20px;font-weight:900;color:var(--dark);}
+        .br-label{font-size:9px;color:var(--gray);text-transform:uppercase;letter-spacing:1px;margin-top:3px;}
+
+        /* TOOLS — moved to bottom */
         .tools-section{background:var(--light);}
         .tools-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;}
         .tool-card{background:#fff;padding:28px 16px;text-align:center;transition:all .3s;cursor:default;}
@@ -129,30 +158,6 @@
         .tool-icon img{max-height:32px;max-width:32px;object-fit:contain;}
         .tool-name{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;}
         .tool-cat{font-size:9px;color:var(--gray);letter-spacing:1px;text-transform:uppercase;}
-
-        /* RESULTS */
-        .results{background:#111;color:#fff;}
-        .results .sec-tag{color:var(--red);}
-        .results .sec-title{color:#fff;}
-        .results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
-        .result-card{padding:48px 32px;border:1px solid rgba(255,255,255,0.06);transition:all .3s;}
-        .result-card:hover{background:rgba(221,22,22,0.08);border-color:rgba(221,22,22,0.3);}
-        .result-num{font-size:52px;font-weight:900;color:var(--red);line-height:1;margin-bottom:12px;letter-spacing:-3px;}
-        .result-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
-        .result-desc{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.7;}
-
-        /* BRANDS */
-        .brands-section{background:var(--cream);}
-        .brands-row{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:2px;}
-        .brand-card{background:#fff;padding:52px 40px;transition:all .3s;}
-        .brand-card:hover{box-shadow:0 20px 60px rgba(0,0,0,.08);transform:translateY(-4px);}
-        .brand-logo{font-size:28px;font-weight:900;text-transform:uppercase;letter-spacing:-1px;margin-bottom:20px;position:relative;display:inline-block;}
-        .brand-logo::after{content:'';position:absolute;bottom:-8px;left:0;width:32px;height:3px;background:var(--red);}
-        .brand-sector{font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:24px;margin-top:20px;}
-        .brand-desc{font-size:12px;color:var(--gray);line-height:1.8;margin-bottom:24px;}
-        .brand-results{display:flex;gap:40px;}
-        .br-num{font-size:24px;font-weight:900;color:var(--dark);}
-        .br-label{font-size:9px;color:var(--gray);text-transform:uppercase;letter-spacing:1px;margin-top:3px;}
 
         /* EDUCATION */
         .education{background:#fff;}
@@ -189,7 +194,11 @@
         .footer-brand span{color:var(--red);}
         footer p{font-size:10px;color:var(--gray);font-weight:600;text-transform:uppercase;letter-spacing:1px;}
 
-        /* RESPONSIVE */
+        /* ANIMATIONS */
+        .fade-in{opacity:0;transform:translateY(30px);transition:all .8s ease-out;}
+        .fade-in.visible{opacity:1;transform:translateY(0);}
+
+        /* ===================== RESPONSIVE ===================== */
         @media(max-width:1024px){
             nav{padding:16px 32px;}
             .hero{flex-direction:column;text-align:center;gap:48px;padding:140px 32px 80px;}
@@ -199,9 +208,10 @@
             .skills-grid{grid-template-columns:1fr 1fr;}
             .tools-grid{grid-template-columns:repeat(4,1fr);}
             .results-grid{grid-template-columns:1fr 1fr;}
-            .brands-row{grid-template-columns:1fr 1fr;}
+            .brands-row{grid-template-columns:repeat(2,1fr);}
         }
 
+        /* ===================== MOBILE ===================== */
         @media(max-width:768px){
             .menu-toggle{display:block;}
             .nav-links{
@@ -213,25 +223,161 @@
             }
             .nav-links.active{display:flex;}
             .nav-right{gap:16px;}
-            .hero-photo{width:260px;height:330px;}
-            .hero-stats{flex-wrap:wrap;gap:32px;}
-            section.content{padding:64px 32px;}
-            .sec-title{font-size:28px;}
-            .contact-grid{grid-template-columns:1fr;gap:48px;}
-            .contact-form{padding:32px;}
-            footer{flex-direction:column;gap:24px;text-align:center;}
+            .hero-photo{width:200px;height:260px;}
+            .hero-stats{flex-wrap:wrap;gap:32px;justify-content:center;}
+            section.content{padding:56px 20px;}
+            .sec-title{font-size:26px;margin-bottom:32px;}
+
+            /* RESULTS mobile — horizontal swipe */
+            .results-grid{
+                display:flex;
+                flex-direction:row;
+                overflow-x:auto;
+                gap:0;
+                -webkit-overflow-scrolling:touch;
+                scroll-snap-type:x mandatory;
+                padding-bottom:16px;
+                margin:0 -20px;
+                padding-left:20px;
+            }
+            .results-grid::-webkit-scrollbar{height:3px;}
+            .results-grid::-webkit-scrollbar-track{background:rgba(255,255,255,0.1);}
+            .results-grid::-webkit-scrollbar-thumb{background:var(--red);border-radius:2px;}
+            .result-card{
+                flex:0 0 72vw;
+                scroll-snap-align:start;
+                border:1px solid rgba(255,255,255,0.06);
+                margin-right:2px;
+            }
+            .result-card:last-child{margin-right:20px;}
+            .result-num{font-size:40px;}
+
+            /* EXPERIENCE mobile — left col becomes top header, then content */
+            .exp-row{
+                display:block;
+                padding:0;
+                margin-bottom:0;
+                border-bottom:none;
+            }
+            .exp-row:hover{background:transparent;padding:0;margin:0;}
+            .exp-row:first-child{border-top:none;}
+
+            /* Toggle accordion for experience */
+            .exp-toggle-header{
+                display:flex;
+                align-items:flex-start;
+                justify-content:space-between;
+                gap:12px;
+                padding:20px 0;
+                border-bottom:1px solid var(--border);
+                cursor:pointer;
+                user-select:none;
+            }
+            .exp-toggle-header:active{background:rgba(0,0,0,0.02);}
+            .exp-toggle-left{flex:1;}
+            .exp-toggle-company{font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--dark);margin-bottom:4px;}
+            .exp-toggle-title{font-size:11px;font-weight:600;color:var(--gray);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;}
+            .exp-toggle-date{font-size:9px;font-weight:700;color:var(--red);letter-spacing:2px;text-transform:uppercase;}
+            .exp-toggle-icon{
+                width:32px;height:32px;
+                border-radius:50%;
+                border:2px solid var(--border);
+                display:flex;align-items:center;justify-content:center;
+                font-size:18px;font-weight:300;color:var(--gray);
+                flex-shrink:0;
+                transition:all .3s;
+                margin-top:4px;
+            }
+            .exp-row.open .exp-toggle-icon{
+                background:var(--red);border-color:var(--red);color:#fff;
+                transform:rotate(45deg);
+            }
+            .exp-body{
+                display:none;
+                padding:16px 0 24px 0;
+                border-bottom:1px solid var(--border);
+            }
+            .exp-row.open .exp-body{display:block;}
+
+            /* Hide desktop exp-left on mobile (we use toggle header instead) */
+            .exp-desktop-left{display:none;}
+            .exp-desktop-right{width:100%;}
+
+            /* SKILLS grid 1 col on small */
+            .skills-grid{grid-template-columns:1fr;}
+
+            /* TOOLS mobile — horizontal swipe */
+            .tools-grid{
+                display:flex;
+                flex-direction:row;
+                overflow-x:auto;
+                -webkit-overflow-scrolling:touch;
+                scroll-snap-type:x mandatory;
+                gap:0;
+                margin:0 -20px;
+                padding-left:20px;
+                padding-bottom:12px;
+            }
+            .tools-grid::-webkit-scrollbar{height:3px;}
+            .tools-grid::-webkit-scrollbar-track{background:var(--border);}
+            .tools-grid::-webkit-scrollbar-thumb{background:var(--red);border-radius:2px;}
+            .tool-card{
+                flex:0 0 140px;
+                scroll-snap-align:start;
+                margin-right:2px;
+            }
+            .tool-card:last-child{margin-right:20px;}
+
+            /* BRANDS mobile — horizontal swipe */
+            .brands-row{
+                display:flex;
+                flex-direction:row;
+                overflow-x:auto;
+                -webkit-overflow-scrolling:touch;
+                scroll-snap-type:x mandatory;
+                gap:0;
+                margin:0 -20px;
+                padding-left:20px;
+                padding-bottom:12px;
+            }
+            .brands-row::-webkit-scrollbar{height:3px;}
+            .brands-row::-webkit-scrollbar-thumb{background:var(--red);}
+            .brand-card{
+                flex:0 0 78vw;
+                scroll-snap-align:start;
+                margin-right:2px;
+            }
+            .brand-card:last-child{margin-right:20px;}
+
+            /* Contact */
+            .contact-grid{grid-template-columns:1fr;gap:40px;}
+            .contact-form{padding:28px 20px;}
+
+            footer{flex-direction:column;gap:20px;text-align:center;padding:40px 20px;}
+
+            /* Swipe hint */
+            .swipe-hint{
+                font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+                color:var(--gray);text-align:right;margin-bottom:12px;
+                display:flex;align-items:center;justify-content:flex-end;gap:6px;
+            }
+            .swipe-hint::after{content:'→';color:var(--red);}
         }
 
         @media(max-width:480px){
-            .skills-grid,.tools-grid,.results-grid,.brands-row{grid-template-columns:1fr;}
-            .hero-photo{width:220px;height:280px;}
-            .hero-stats{gap:24px;}
-            .stat-num{font-size:28px;}
+            .hero-photo{width:180px;height:230px;}
+            .hero-stats{gap:20px;}
+            .stat-num{font-size:26px;}
+            nav{padding:14px 20px;}
         }
 
-        /* ANIMATIONS */
-        .fade-in{opacity:0;transform:translateY(30px);transition:all .8s ease-out;}
-        .fade-in.visible{opacity:1;transform:translateY(0);}
+        /* Desktop: hide mobile-only elements */
+        @media(min-width:769px){
+            .exp-toggle-header{display:none;}
+            .exp-body{display:block !important;}
+            .exp-desktop-left{display:block;}
+            .swipe-hint{display:none;}
+        }
     </style>
 </head>
 <body>
@@ -241,9 +387,9 @@
     <div class="nav-brand">Ngo Tran <span>Anh Thu</span></div>
     <div class="nav-right">
         <ul class="nav-links" id="navLinks">
+            <li><a href="#results" data-en="Results" data-vi="Kết quả">Results</a></li>
             <li><a href="#expertise" data-en="Expertise" data-vi="Chuyên môn">Expertise</a></li>
             <li><a href="#experience" data-en="Experience" data-vi="Kinh nghiệm">Experience</a></li>
-            <li><a href="#results" data-en="Results" data-vi="Kết quả">Results</a></li>
             <li><a href="#brands" data-en="Brands" data-vi="Thương hiệu">Brands</a></li>
             <li><a href="#contact" data-en="Contact" data-vi="Liên hệ">Contact</a></li>
         </ul>
@@ -299,7 +445,38 @@
     </div>
 </div>
 
-<!-- EXPERTISE -->
+<!-- ★ RESULTS (moved to 1st section after hero) -->
+<section class="content results" id="results">
+    <div class="section-inner">
+        <div class="sec-tag" data-en="By The Numbers" data-vi="Con số nổi bật">By The Numbers</div>
+        <h2 class="sec-title" data-en="Results That Matter" data-vi="Kết quả thực tế">Results That Matter</h2>
+        <div class="swipe-hint" data-en="Swipe to explore" data-vi="Vuốt để xem thêm">Swipe to explore</div>
+        <div class="results-grid">
+            <div class="result-card fade-in">
+                <div class="result-num">↑40%</div>
+                <div class="result-label" data-en="ROAS Improvement" data-vi="Cải thiện ROAS">ROAS Improvement</div>
+                <div class="result-desc" data-en="Average ROAS lift across all managed campaigns through strategic optimization." data-vi="Trung bình cải thiện ROAS trên tất cả các chiến dịch quản lý thông qua tối ưu hóa chiến lược.">Average ROAS lift across all managed campaigns through strategic optimization.</div>
+            </div>
+            <div class="result-card fade-in">
+                <div class="result-num">↑70%</div>
+                <div class="result-label" data-en="Online Revenue Growth" data-vi="Tăng trưởng doanh thu online">Online Revenue Growth</div>
+                <div class="result-desc" data-en="Online revenue growth achieved at Archcafé within 6 months of campaign execution." data-vi="Tăng trưởng doanh thu online đạt được tại Archcafé trong 6 tháng triển khai chiến dịch.">Online revenue growth achieved at Archcafé within 6 months of campaign execution.</div>
+            </div>
+            <div class="result-card fade-in">
+                <div class="result-num">↑20%</div>
+                <div class="result-label" data-en="Facebook Traffic Increase" data-vi="Tăng lưu lượng Facebook">Facebook Traffic Increase</div>
+                <div class="result-desc" data-en="Organic and paid traffic growth on Facebook through content strategy and ads optimization." data-vi="Tăng trưởng lưu lượng organic và trả phí trên Facebook thông qua chiến lược nội dung và tối ưu quảng cáo.">Organic and paid traffic growth on Facebook through content strategy and ads optimization.</div>
+            </div>
+            <div class="result-card fade-in">
+                <div class="result-num">4+</div>
+                <div class="result-label" data-en="Years Experience" data-vi="Năm kinh nghiệm">Years Experience</div>
+                <div class="result-desc" data-en="Hands-on experience managing performance marketing across multiple brands and industries." data-vi="Kinh nghiệm thực chiến quản lý performance marketing trên nhiều thương hiệu và ngành hàng.">Hands-on experience managing performance marketing across multiple brands and industries.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ★ EXPERTISE (moved to 2nd section) -->
 <section class="content expertise" id="expertise">
     <div class="section-inner">
         <div class="sec-tag" data-en="Core Expertise" data-vi="Chuyên môn cốt lõi">Core Expertise</div>
@@ -333,9 +510,24 @@
         <div class="sec-tag" data-en="Career Journey" data-vi="Hành trình sự nghiệp">Career Journey</div>
         <h2 class="sec-title" data-en="Professional Experience" data-vi="Kinh nghiệm làm việc">Professional Experience</h2>
 
+        <!-- EXP 1 -->
         <div class="exp-row fade-in">
-            <div><div class="exp-date">07/2024 — Hiện tại</div><div class="exp-co">Bonario Vietnam<br>Ordinaire · Reverie</div></div>
-            <div>
+            <!-- Mobile toggle header -->
+            <div class="exp-toggle-header" onclick="toggleExp(this)">
+                <div class="exp-toggle-left">
+                    <div class="exp-toggle-company">Bonario · Ordinaire · Reverie</div>
+                    <div class="exp-toggle-title" data-en="Senior Digital Marketing" data-vi="Senior Digital Marketing">Senior Digital Marketing</div>
+                    <div class="exp-toggle-date">07/2024 — <span data-en="Present" data-vi="Hiện tại">Present</span></div>
+                </div>
+                <div class="exp-toggle-icon">+</div>
+            </div>
+            <!-- Desktop left col -->
+            <div class="exp-desktop-left">
+                <div class="exp-date">07/2024 — <span data-en="Present" data-vi="Hiện tại">Present</span></div>
+                <div class="exp-co">Bonario Vietnam<br>Ordinaire · Reverie</div>
+            </div>
+            <!-- Content (desktop always visible, mobile toggled) -->
+            <div class="exp-desktop-right exp-body">
                 <div class="exp-jobtitle" data-en="Senior Digital Marketing" data-vi="Senior Digital Marketing">Senior Digital Marketing</div>
                 <span class="exp-badge" data-en="Current Role" data-vi="Vị trí hiện tại">Current Role</span>
                 <ul class="exp-bullets">
@@ -349,9 +541,21 @@
             </div>
         </div>
 
+        <!-- EXP 2 -->
         <div class="exp-row fade-in">
-            <div><div class="exp-date">04/2023 — 05/2024</div><div class="exp-co">Archcafé JSC</div></div>
-            <div>
+            <div class="exp-toggle-header" onclick="toggleExp(this)">
+                <div class="exp-toggle-left">
+                    <div class="exp-toggle-company">Archcafé JSC</div>
+                    <div class="exp-toggle-title" data-en="Digital Marketing Executive" data-vi="Chuyên viên Digital Marketing">Digital Marketing Executive</div>
+                    <div class="exp-toggle-date">04/2023 — 05/2024</div>
+                </div>
+                <div class="exp-toggle-icon">+</div>
+            </div>
+            <div class="exp-desktop-left">
+                <div class="exp-date">04/2023 — 05/2024</div>
+                <div class="exp-co">Archcafé JSC</div>
+            </div>
+            <div class="exp-desktop-right exp-body">
                 <div class="exp-jobtitle" data-en="Digital Marketing Executive" data-vi="Chuyên viên Digital Marketing">Digital Marketing Executive</div>
                 <span class="exp-badge" data-en="F&B Brand" data-vi="Thương hiệu F&B">F&B Brand</span>
                 <ul class="exp-bullets">
@@ -364,91 +568,75 @@
             </div>
         </div>
 
+        <!-- EXP 3 — Operations Executive (expanded bullets) -->
         <div class="exp-row fade-in">
-            <div><div class="exp-date">01/2022 — 03/2023</div><div class="exp-co">The Open Space</div></div>
-            <div>
+            <div class="exp-toggle-header" onclick="toggleExp(this)">
+                <div class="exp-toggle-left">
+                    <div class="exp-toggle-company">The Open Space</div>
+                    <div class="exp-toggle-title" data-en="Marketing & Operations Executive" data-vi="Chuyên viên Marketing & Vận hành">Marketing & Operations Executive</div>
+                    <div class="exp-toggle-date">01/2022 — 03/2023</div>
+                </div>
+                <div class="exp-toggle-icon">+</div>
+            </div>
+            <div class="exp-desktop-left">
+                <div class="exp-date">01/2022 — 03/2023</div>
+                <div class="exp-co">The Open Space</div>
+            </div>
+            <div class="exp-desktop-right exp-body">
                 <div class="exp-jobtitle" data-en="Marketing & Operations Executive" data-vi="Chuyên viên Marketing & Vận hành">Marketing & Operations Executive</div>
                 <span class="exp-badge" data-en="Events & B2B" data-vi="Sự kiện & B2B">Events & B2B</span>
                 <ul class="exp-bullets">
-                    <li data-en="Managed social content across Facebook, Zalo, TikTok" data-vi="Quản lý nội dung mạng xã hội trên Facebook, Zalo, TikTok">Managed social content across Facebook, Zalo, TikTok</li>
-                    <li data-en="Organized <strong>6 workshops/month</strong> (10–20 participants each)" data-vi="Tổ chức <strong>6 workshop/tháng</strong> (10–20 người tham dự mỗi buổi)">Organized <strong>6 workshops/month</strong> (10–20 participants each)</li>
-                    <li data-en="Maintained customer relationships and managed B2B sales" data-vi="Duy trì quan hệ khách hàng và quản lý bán hàng B2B">Maintained customer relationships and managed B2B sales</li>
+                    <li data-en="Managed social content across Facebook, Zalo, TikTok — maintaining consistent brand voice and posting schedule" data-vi="Quản lý nội dung mạng xã hội trên Facebook, Zalo, TikTok — duy trì giọng nói thương hiệu nhất quán và lịch đăng bài">Managed social content across Facebook, Zalo, TikTok — maintaining consistent brand voice and posting schedule</li>
+                    <li data-en="Organized <strong>6 workshops/month</strong> (10–20 participants each), handling end-to-end event logistics and promotion" data-vi="Tổ chức <strong>6 workshop/tháng</strong> (10–20 người tham dự mỗi buổi), xử lý hậu cần và quảng bá sự kiện từ đầu đến cuối">Organized <strong>6 workshops/month</strong> (10–20 participants each), handling end-to-end event logistics and promotion</li>
+                    <li data-en="Maintained customer relationships and managed <strong>B2B sales pipeline</strong>, converting leads into long-term contracts" data-vi="Duy trì quan hệ khách hàng và quản lý <strong>pipeline bán hàng B2B</strong>, chuyển đổi khách hàng tiềm năng thành hợp đồng dài hạn">Maintained customer relationships and managed <strong>B2B sales pipeline</strong>, converting leads into long-term contracts</li>
+                    <li data-en="Produced creative assets (graphics, short videos) for event promotion across digital channels" data-vi="Sản xuất tài sản sáng tạo (đồ họa, video ngắn) để quảng bá sự kiện trên các kênh kỹ thuật số">Produced creative assets (graphics, short videos) for event promotion across digital channels</li>
+                    <li data-en="Collaborated with <strong>external partners & vendors</strong> to co-host community events, growing brand awareness organically" data-vi="Hợp tác với <strong>đối tác & nhà cung cấp bên ngoài</strong> để đồng tổ chức các sự kiện cộng đồng, tăng nhận diện thương hiệu tự nhiên">Collaborated with <strong>external partners & vendors</strong> to co-host community events, growing brand awareness organically</li>
                 </ul>
             </div>
         </div>
 
+        <!-- EXP 4 — Intern (expanded bullets) -->
         <div class="exp-row fade-in">
-            <div><div class="exp-date">06/2021 — 12/2021</div><div class="exp-co">Dynamic Consulting</div></div>
-            <div>
+            <div class="exp-toggle-header" onclick="toggleExp(this)">
+                <div class="exp-toggle-left">
+                    <div class="exp-toggle-company">Dynamic Consulting</div>
+                    <div class="exp-toggle-title" data-en="Marketing Intern" data-vi="Thực tập sinh Marketing">Marketing Intern</div>
+                    <div class="exp-toggle-date">06/2021 — 12/2021</div>
+                </div>
+                <div class="exp-toggle-icon">+</div>
+            </div>
+            <div class="exp-desktop-left">
+                <div class="exp-date">06/2021 — 12/2021</div>
+                <div class="exp-co">Dynamic Consulting</div>
+            </div>
+            <div class="exp-desktop-right exp-body">
                 <div class="exp-jobtitle" data-en="Marketing Intern" data-vi="Thực tập sinh Marketing">Marketing Intern</div>
                 <span class="exp-badge" data-en="First Role" data-vi="Vai trò đầu tiên">First Role</span>
                 <ul class="exp-bullets">
-                    <li data-en="Content writing and social media design for company projects" data-vi="Viết nội dung và thiết kế mạng xã hội cho các dự án công ty">Content writing and social media design for company projects</li>
-                    <li data-en="Ran <strong>Email Marketing & Facebook Ads</strong> campaigns" data-vi="Triển khai các chiến dịch <strong>Email Marketing & Facebook Ads</strong>">Ran <strong>Email Marketing & Facebook Ads</strong> campaigns</li>
-                    <li data-en="Collaborated with company partners and stakeholders" data-vi="Phối hợp với các đối tác và các bên liên quan của công ty">Collaborated with company partners and stakeholders</li>
+                    <li data-en="Content writing and social media design for company projects — building core copywriting and visual communication skills" data-vi="Viết nội dung và thiết kế mạng xã hội cho các dự án công ty — xây dựng kỹ năng copywriting và truyền thông hình ảnh cốt lõi">Content writing and social media design for company projects — building core copywriting and visual communication skills</li>
+                    <li data-en="Ran <strong>Email Marketing & Facebook Ads</strong> campaigns, learning audience segmentation and basic funnel strategy" data-vi="Triển khai các chiến dịch <strong>Email Marketing & Facebook Ads</strong>, học cách phân khúc đối tượng và chiến lược phễu cơ bản">Ran <strong>Email Marketing & Facebook Ads</strong> campaigns, learning audience segmentation and basic funnel strategy</li>
+                    <li data-en="Collaborated with company partners and stakeholders across multiple project deliverables" data-vi="Phối hợp với các đối tác và các bên liên quan của công ty trong nhiều sản phẩm dự án">Collaborated with company partners and stakeholders across multiple project deliverables</li>
+                    <li data-en="Assisted in <strong>market research & data collection</strong> to support senior team strategic planning" data-vi="Hỗ trợ <strong>nghiên cứu thị trường & thu thập dữ liệu</strong> để hỗ trợ lập kế hoạch chiến lược cho nhóm cấp cao">Assisted in <strong>market research & data collection</strong> to support senior team strategic planning</li>
+                    <li data-en="Supported <strong>event coordination</strong> for company workshops and client meetings, gaining exposure to B2B marketing dynamics" data-vi="Hỗ trợ <strong>phối hợp sự kiện</strong> cho các workshop công ty và cuộc họp khách hàng, tiếp xúc với động lực marketing B2B">Supported <strong>event coordination</strong> for company workshops and client meetings, gaining exposure to B2B marketing dynamics</li>
                 </ul>
             </div>
         </div>
+
     </div>
 </section>
 
-<!-- TOOLS -->
-<section class="content tools-section" id="tools">
-    <div class="section-inner">
-        <div class="sec-tag" data-en="Tech Stack" data-vi="Công cụ sử dụng">Tech Stack</div>
-        <h2 class="sec-title" data-en="Tools & Platforms" data-vi="Công cụ & Nền tảng">Tools & Platforms</h2>
-        <div class="tools-grid">
-            <div class="tool-card fade-in"><div class="tool-icon"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663381881482/BHztJGjVluhaYpjZ.png" alt="Meta"></div><div class="tool-name">Meta Ads</div><div class="tool-cat" data-en="Paid Social" data-vi="Mạng xã hội trả phí">Paid Social</div></div>
-            <div class="tool-card fade-in"><div class="tool-icon"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663381881482/JeiRsRvXvjVbZJqE.png" alt="Google Ads"></div><div class="tool-name">Google Ads</div><div class="tool-cat" data-en="Paid Search" data-vi="Tìm kiếm trả phí">Paid Search</div></div>
-            <div class="tool-card fade-in"><div class="tool-icon"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663381881482/OnkIbyeLCFlMljPR.png" alt="Tiktok Ads"></div><div class="tool-name">Tiktok Ads</div><div class="tool-cat" data-en="Paid Social" data-vi="Mạng xã hội trả phí">Paid Social</div></div>
-            <div class="tool-card fade-in"><div class="tool-icon"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663381881482/HUVZTPiXkwmOEThS.png" alt="Shopify"></div><div class="tool-name">Shopify</div><div class="tool-cat" data-en="Website Management" data-vi="Quản lý website">Website Management</div></div>
-            <div class="tool-card fade-in"><div class="tool-icon"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663381881482/TZMIYXeJXhEVbbmT.png" alt="Manychat"></div><div class="tool-name">Manychat</div><div class="tool-cat" data-en="Build Chatbot" data-vi="Xây dựng Chatbot"> Xây dựng Chatbot</div></div>
-            <div class="tool-card fade-in"><div class="tool-icon"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663381881482/IwHGpEIcjsVOEftf.png" alt="Odoo"></div><div class="tool-name">Odoo</div><div class="tool-cat" data-en="CRM" data-vi="CRM">CRM</div></div>
-            <div class="tool-card fade-in"><div class="tool-icon"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663381881482/bAdermeAhstQCMos.png" alt="Canva"></div><div class="tool-name">Canva</div><div class="tool-cat" data-en="Creative" data-vi="Thiết kế ấn phẩm/hình ảnh">Creative</div></div>
-            <div class="tool-card fade-in"><div class="tool-icon"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663381881482/ulYuOttvVaUnBRrA.png" alt="Capcut"></div><div class="tool-name">Capcut</div><div class="tool-cat" data-en="Video Editor" data-vi="Biên tập video">.Video Editor</div></div>
-            <div class="tool-card fade-in"><div class="tool-icon"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663381881482/xpReDZuDZdPKGdsX.png" alt="Photoshop"></div><div class="tool-name">Photoshop</div><div class="tool-cat" data-en="Creative" data-vi="Thiết kế ấn phẩm/hình ảnh">Analytics</div></div>
-        </div>
-    </div>
-</section>
-
-<!-- RESULTS -->
-<section class="content results" id="results">
-    <div class="section-inner">
-        <div class="sec-tag" data-en="By The Numbers" data-vi="Con số nổi bật">By The Numbers</div>
-        <h2 class="sec-title" data-en="Results That Matter" data-vi="Kết quả thực tế">Results That Matter</h2>
-        <div class="results-grid">
-            <div class="result-card fade-in">
-                <div class="result-num">↑40%</div>
-                <div class="result-label" data-en="ROAS Improvement" data-vi="Cải thiện ROAS">ROAS Improvement</div>
-                <div class="result-desc" data-en="Average ROAS lift across all managed campaigns through strategic optimization." data-vi="Trung bình cải thiện ROAS trên tất cả các chiến dịch quản lý thông qua tối ưu hóa chiến lược.">Average ROAS lift across all managed campaigns through strategic optimization.</div>
-            </div>
-            <div class="result-card fade-in">
-                <div class="result-num">↑70%</div>
-                <div class="result-label" data-en="Online Revenue Growth" data-vi="Tăng trưởng doanh thu online">Online Revenue Growth</div>
-                <div class="result-desc" data-en="Online revenue growth achieved at Archcafé within 6 months of campaign execution." data-vi="Tăng trưởng doanh thu online đạt được tại Archcafé trong 6 tháng triển khai chiến dịch.">Online revenue growth achieved at Archcafé within 6 months of campaign execution.</div>
-            </div>
-            <div class="result-card fade-in">
-                <div class="result-num">↑20%</div>
-                <div class="result-label" data-en="Facebook Traffic Increase" data-vi="Tăng lưu lượng Facebook">Facebook Traffic Increase</div>
-                <div class="result-desc" data-en="Organic and paid traffic growth on Facebook through content strategy and ads optimization." data-vi="Tăng trưởng lưu lượng organic và trả phí trên Facebook thông qua chiến lược nội dung và tối ưu quảng cáo.">Organic and paid traffic growth on Facebook through content strategy and ads optimization.</div>
-            </div>
-            <div class="result-card fade-in">
-                <div class="result-num">4+</div>
-                <div class="result-label" data-en="Years Experience" data-vi="Năm kinh nghiệm">Years Experience</div>
-                <div class="result-desc" data-en="Hands-on experience managing performance marketing across multiple brands and industries." data-vi="Kinh nghiệm thực chiến quản lý performance marketing trên nhiều thương hiệu và ngành hàng.">Hands-on experience managing performance marketing across multiple brands and industries.</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- BRANDS -->
+<!-- BRANDS — 4 in 1 row with logo placeholder -->
 <section class="content brands-section" id="brands">
     <div class="section-inner">
         <div class="sec-tag" data-en="Portfolio" data-vi="Danh mục thương hiệu">Portfolio</div>
         <h2 class="sec-title" data-en="Brands I've Grown" data-vi="Thương hiệu đã đồng hành">Brands I've Grown</h2>
+        <div class="swipe-hint" data-en="Swipe to explore" data-vi="Vuốt để xem thêm">Swipe to explore</div>
         <div class="brands-row">
             <div class="brand-card fade-in">
-                <div class="brand-logo">Ordinaire</div>
+                <div class="brand-header">
+                    <div class="brand-logo-placeholder" title="Add Ordinaire logo">🏠</div>
+                    <div class="brand-logo">Ordinaire</div>
+                </div>
                 <div class="brand-sector" data-en="Interior Design & Furniture" data-vi="Thiết kế nội thất & Nội thất">Interior Design & Furniture</div>
                 <p class="brand-desc" data-en="Managed full-funnel Meta & Google Ads strategy for Ordinaire's premium interior design brand, driving qualified leads and improving ROAS through continuous optimization." data-vi="Quản lý chiến lược Meta & Google Ads toàn phễu cho thương hiệu thiết kế nội thất cao cấp Ordinaire, tạo ra khách hàng tiềm năng chất lượng và cải thiện ROAS thông qua tối ưu hóa liên tục.">Managed full-funnel Meta & Google Ads strategy for Ordinaire's premium interior design brand, driving qualified leads and improving ROAS through continuous optimization.</p>
                 <div class="brand-results">
@@ -457,7 +645,10 @@
                 </div>
             </div>
             <div class="brand-card fade-in">
-                <div class="brand-logo">Bonario</div>
+                <div class="brand-header">
+                    <div class="brand-logo-placeholder" title="Add Bonario logo">🪴</div>
+                    <div class="brand-logo">Bonario</div>
+                </div>
                 <div class="brand-sector" data-en="Lifestyle & Home Decor" data-vi="Lifestyle & Trang trí nhà">Lifestyle & Home Decor</div>
                 <p class="brand-desc" data-en="Led digital marketing for Bonario's lifestyle brand portfolio, leveraging data analytics and A/B testing to scale campaigns and reduce cost per acquisition." data-vi="Dẫn dắt digital marketing cho danh mục thương hiệu lifestyle Bonario, tận dụng phân tích dữ liệu và A/B testing để mở rộng chiến dịch và giảm chi phí mỗi lần thu hút khách hàng.">Led digital marketing for Bonario's lifestyle brand portfolio, leveraging data analytics and A/B testing to scale campaigns and reduce cost per acquisition.</p>
                 <div class="brand-results">
@@ -466,7 +657,10 @@
                 </div>
             </div>
             <div class="brand-card fade-in">
-                <div class="brand-logo">Reverie</div>
+                <div class="brand-header">
+                    <div class="brand-logo-placeholder" title="Add Reverie logo">✨</div>
+                    <div class="brand-logo">Reverie</div>
+                </div>
                 <div class="brand-sector" data-en="Premium Furniture" data-vi="Nội thất cao cấp">Premium Furniture</div>
                 <p class="brand-desc" data-en="Developed Reverie's performance marketing strategy with a focus on high-intent audience targeting and funnel optimization for premium furniture buyers." data-vi="Phát triển chiến lược performance marketing cho Reverie với trọng tâm nhắm mục tiêu đối tượng có ý định cao và tối ưu hóa phễu cho người mua nội thất cao cấp.">Developed Reverie's performance marketing strategy with a focus on high-intent audience targeting and funnel optimization for premium furniture buyers.</p>
                 <div class="brand-results">
@@ -475,14 +669,37 @@
                 </div>
             </div>
             <div class="brand-card fade-in">
-                <div class="brand-logo">Archcafé JSC</div>
-                <div class="brand-sector" data-en="Authentic Vietnam Coffee" data-vi="Nội thất cao cấp">Authentic Vietnam Coffee</div>
-                <p class="brand-desc" data-en="Developed Reverie's performance marketing strategy with a focus on high-intent audience targeting and funnel optimization for premium furniture buyers." data-vi="Phát triển chiến lược performance marketing cho Reverie với trọng tâm nhắm mục tiêu đối tượng có ý định cao và tối ưu hóa phễu cho người mua nội thất cao cấp.">Developed Reverie's performance marketing strategy with a focus on high-intent audience targeting and funnel optimization for premium furniture buyers.</p>
+                <div class="brand-header">
+                    <div class="brand-logo-placeholder" title="Add Archcafé logo">☕</div>
+                    <div class="brand-logo">Archcafé</div>
+                </div>
+                <div class="brand-sector" data-en="Authentic Vietnam Coffee" data-vi="Cà phê Việt Nam">Authentic Vietnam Coffee</div>
+                <p class="brand-desc" data-en="Drove 50–70% online revenue growth in 6 months through Meta Ads, TikTok Ads and CRM programs, while growing Facebook organic traffic by 20%." data-vi="Tăng trưởng doanh thu online 50–70% trong 6 tháng thông qua Meta Ads, TikTok Ads và chương trình CRM, đồng thời tăng lưu lượng organic Facebook 20%.">Drove 50–70% online revenue growth in 6 months through Meta Ads, TikTok Ads and CRM programs, while growing Facebook organic traffic by 20%.</p>
                 <div class="brand-results">
-                    <div><div class="br-num">GTM</div><div class="br-label" data-en="Tracking Setup" data-vi="Cài đặt theo dõi">Tracking Setup</div></div>
-                    <div><div class="br-num">GA4</div><div class="br-label" data-en="Analytics" data-vi="Phân tích">Analytics</div></div>
+                    <div><div class="br-num">↑70%</div><div class="br-label" data-en="Revenue" data-vi="Doanh thu">Revenue</div></div>
+                    <div><div class="br-num">CRM</div><div class="br-label" data-en="Programs" data-vi="Chương trình">Programs</div></div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- TOOLS — moved to bottom / last before contact -->
+<section class="content tools-section" id="tools">
+    <div class="section-inner">
+        <div class="sec-tag" data-en="Tech Stack" data-vi="Công cụ sử dụng">Tech Stack</div>
+        <h2 class="sec-title" data-en="Tools & Platforms" data-vi="Công cụ & Nền tảng">Tools & Platforms</h2>
+        <div class="swipe-hint" data-en="Swipe to explore" data-vi="Vuốt để xem thêm">Swipe to explore</div>
+        <div class="tools-grid">
+            <div class="tool-card fade-in"><div class="tool-icon"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663381881482/BHztJGjVluhaYpjZ.png" alt="Meta"></div><div class="tool-name">Meta Ads</div><div class="tool-cat" data-en="Paid Social" data-vi="Mạng xã hội trả phí">Paid Social</div></div>
+            <div class="tool-card fade-in"><div class="tool-icon"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663381881482/JeiRsRvXvjVbZJqE.png" alt="Google Ads"></div><div class="tool-name">Google Ads</div><div class="tool-cat" data-en="Paid Search" data-vi="Tìm kiếm trả phí">Paid Search</div></div>
+            <div class="tool-card fade-in"><div class="tool-icon"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663381881482/OnkIbyeLCFlMljPR.png" alt="Tiktok Ads"></div><div class="tool-name">TikTok Ads</div><div class="tool-cat" data-en="Paid Social" data-vi="Mạng xã hội trả phí">Paid Social</div></div>
+            <div class="tool-card fade-in"><div class="tool-icon"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663381881482/HUVZTPiXkwmOEThS.png" alt="Shopify"></div><div class="tool-name">Shopify</div><div class="tool-cat" data-en="Website Management" data-vi="Quản lý website">Website Management</div></div>
+            <div class="tool-card fade-in"><div class="tool-icon"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663381881482/TZMIYXeJXhEVbbmT.png" alt="Manychat"></div><div class="tool-name">Manychat</div><div class="tool-cat" data-en="Chatbot" data-vi="Xây dựng Chatbot">Chatbot</div></div>
+            <div class="tool-card fade-in"><div class="tool-icon"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663381881482/IwHGpEIcjsVOEftf.png" alt="Odoo"></div><div class="tool-name">Odoo</div><div class="tool-cat" data-en="CRM" data-vi="CRM">CRM</div></div>
+            <div class="tool-card fade-in"><div class="tool-icon"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663381881482/bAdermeAhstQCMos.png" alt="Canva"></div><div class="tool-name">Canva</div><div class="tool-cat" data-en="Creative" data-vi="Thiết kế">Creative</div></div>
+            <div class="tool-card fade-in"><div class="tool-icon"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663381881482/ulYuOttvVaUnBRrA.png" alt="Capcut"></div><div class="tool-name">CapCut</div><div class="tool-cat" data-en="Video Editor" data-vi="Biên tập video">Video Editor</div></div>
+            <div class="tool-card fade-in"><div class="tool-icon"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663381881482/xpReDZuDZdPKGdsX.png" alt="Photoshop"></div><div class="tool-name">Photoshop</div><div class="tool-cat" data-en="Creative" data-vi="Thiết kế">Creative</div></div>
         </div>
     </div>
 </section>
@@ -508,8 +725,8 @@
             </div>
             <div>
                 <form class="contact-form" onsubmit="handleForm(event)">
-                    <input class="cf-input" type="text" id="inputName" placeholder="Họ và tên" required data-en-placeholder="Your Name" data-vi-placeholder="Họ và tên">
-                    <input class="cf-input" type="email" id="inputEmail" placeholder="Email của bạn" required data-en-placeholder="Your Email" data-vi-placeholder="Email của bạn">
+                    <input class="cf-input" type="text" id="inputName" placeholder="Your Name" required data-en-placeholder="Your Name" data-vi-placeholder="Họ và tên">
+                    <input class="cf-input" type="email" id="inputEmail" placeholder="Your Email" required data-en-placeholder="Your Email" data-vi-placeholder="Email của bạn">
                     <button type="submit" class="cf-submit" data-en="Send Message →" data-vi="Gửi tin nhắn →">Send Message →</button>
                 </form>
             </div>
@@ -529,25 +746,26 @@
         document.getElementById('navLinks').classList.toggle('active');
     }
 
+    // Experience accordion toggle (mobile)
+    function toggleExp(header) {
+        const row = header.closest('.exp-row');
+        const isOpen = row.classList.contains('open');
+        // Close all first
+        document.querySelectorAll('.exp-row.open').forEach(r => r.classList.remove('open'));
+        if (!isOpen) row.classList.add('open');
+    }
+
     // Language Switcher
     const translations = {
         en: {
             heroSummary: 'Results-driven marketer with over <strong>4 years of experience</strong> in <strong>Meta & Google Ads</strong>, optimizing conversion funnels and generating quality leads for <strong>Ordinaire, Bonario & Reverie</strong>.',
             formSuccess: 'Message Sent ✓',
             formDefault: 'Send Message →',
-            expDate1: '07/2024 — Present',
-            expDate2: '04/2023 — 05/2024',
-            expDate3: '01/2022 — 03/2023',
-            expDate4: '06/2021 — 12/2021'
         },
         vi: {
             heroSummary: 'Chuyên viên Digital Marketing hướng tới kết quả với hơn <strong>4 năm kinh nghiệm</strong> thực chiến trên <strong>Meta & Google Ads</strong>, tối ưu hóa phễu chuyển đổi và tạo ra khách hàng tiềm năng chất lượng cho <strong>Ordinaire, Bonario & Reverie</strong>.',
             formSuccess: 'Đã gửi tin nhắn ✓',
             formDefault: 'Gửi tin nhắn →',
-            expDate1: '07/2024 — Hiện tại',
-            expDate2: '04/2023 — 05/2024',
-            expDate3: '01/2022 — 03/2023',
-            expDate4: '06/2021 — 12/2021'
         }
     };
 
@@ -556,37 +774,27 @@
     function setLang(lang) {
         currentLang = lang;
 
-        // Update active button
         document.querySelectorAll('.lang-btn').forEach(btn => {
             btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
         });
 
-        // Update elements with data-en / data-vi text attributes
         document.querySelectorAll('[data-' + lang + ']').forEach(el => {
             const val = el.getAttribute('data-' + lang);
-            if (val !== null) {
-                el.innerHTML = val;
-            }
+            if (val !== null) el.innerHTML = val;
         });
 
-        // Update placeholder attributes
         document.querySelectorAll('[data-' + lang + '-placeholder]').forEach(el => {
             el.placeholder = el.getAttribute('data-' + lang + '-placeholder');
         });
 
-        // Update heroSummary
         document.getElementById('heroSummary').innerHTML = translations[lang].heroSummary;
-
-        // Close mobile menu if open
         document.getElementById('navLinks').classList.remove('active');
     }
 
     // Scroll animations
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
+            if (entry.isIntersecting) entry.target.classList.add('visible');
         });
     }, { threshold: 0.1 });
 
@@ -598,11 +806,9 @@
         const btn = e.target.querySelector('.cf-submit');
         btn.textContent = translations[currentLang].formSuccess;
         btn.style.background = '#111';
-        btn.style.color = '#fff';
         setTimeout(() => {
             btn.textContent = translations[currentLang].formDefault;
             btn.style.background = 'var(--red)';
-            btn.style.color = '#fff';
             e.target.reset();
         }, 3000);
     }
