@@ -8,7 +8,11 @@
     <style>
         *{margin:0;padding:0;box-sizing:border-box;}
         :root{
-            --red:#dd1616;
+            --accent:#7298C7;
+            --accent-dark:#4d73a8;
+            --accent-hover:#5a80b5;
+            --butter:#F3D98F;
+            --butter-dark:#e8c45a;
             --cream:#fdf9f4;
             --dark:#111;
             --gray:#666;
@@ -27,16 +31,16 @@
             padding:16px 64px;
         }
         .nav-brand{font-size:13px;font-weight:800;letter-spacing:3px;text-transform:uppercase;}
-        .nav-brand span{color:var(--red);}
+        .nav-brand span{color:var(--accent);}
         .nav-right{display:flex;align-items:center;gap:32px;}
         .nav-links{display:flex;gap:32px;list-style:none;}
         .nav-links a{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gray);text-decoration:none;transition:color .2s;}
-        .nav-links a:hover{color:var(--red);}
+        .nav-links a:hover{color:var(--accent);}
 
         .lang-switch{display:flex;gap:8px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;}
         .lang-btn{cursor:pointer;color:var(--gray);transition:color .2s;}
-        .lang-btn.active{color:var(--red);}
-        .lang-btn:hover{color:var(--red);}
+        .lang-btn.active{color:var(--accent);}
+        .lang-btn:hover{color:var(--accent);}
 
         .menu-toggle{display:none;font-size:24px;cursor:pointer;}
 
@@ -51,37 +55,37 @@
         }
         .hero::before{
             content:'';position:absolute;inset:0;
-            background:radial-gradient(circle at 30% 70%, rgba(221,22,22,0.08) 0%, transparent 60%);
+            background:radial-gradient(circle at 30% 70%, rgba(114,152,199,0.10) 0%, transparent 60%);
         }
         .hero-left{flex-shrink:0;position:relative;z-index:1;}
         .hero-photo{
             width:300px;height:380px;
             border-radius:12px;
-            border:4px solid var(--red);
+            border:4px solid var(--accent);
             overflow:hidden;
-            box-shadow:20px 20px 0px rgba(221,22,22,0.08);
+            box-shadow:20px 20px 0px rgba(114,152,199,0.12);
         }
         .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
         .hero-right{flex:1;max-width:650px;position:relative;z-index:1;}
         .hero-tag{
             font-size:10px;font-weight:700;letter-spacing:4px;text-transform:uppercase;
-            color:var(--red);margin-bottom:20px;
+            color:var(--accent);margin-bottom:20px;
             display:flex;align-items:center;gap:12px;
         }
-        .hero-tag::before{content:'';width:28px;height:2px;background:var(--red);}
+        .hero-tag::before{content:'';width:28px;height:2px;background:var(--accent);}
         .hero-summary{font-size:15px;color:var(--gray);line-height:1.8;margin-bottom:40px;}
         .hero-summary strong{color:var(--dark);font-weight:700;}
         .hero-btns{display:flex;gap:16px;margin-bottom:50px;}
-        .btn-red{background:var(--red);color:#fff;padding:16px 36px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:.3s;}
-        .btn-red:hover{background:#b81212;transform:translateY(-3px);}
+        .btn-red{background:var(--accent);color:#fff;padding:16px 36px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:.3s;}
+        .btn-red:hover{background:var(--accent-dark);transform:translateY(-3px);}
         .btn-ghost{border:2px solid var(--dark);color:var(--dark);padding:16px 36px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:.3s;}
-        .btn-ghost:hover{border-color:var(--red);color:var(--red);transform:translateY(-3px);}
+        .btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-3px);}
         .hero-stats{display:flex;gap:56px;padding-top:32px;border-top:1px solid rgba(0,0,0,0.06);}
-        .stat-num{font-size:32px;font-weight:900;color:var(--red);line-height:1;}
+        .stat-num{font-size:32px;font-weight:900;color:var(--accent);line-height:1;}
         .stat-label{font-size:9px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:2px;margin-top:6px;}
 
         /* MARQUEE */
-        .marquee-strip{background:var(--red);padding:14px 0;overflow:hidden;white-space:nowrap;}
+        .marquee-strip{background:var(--accent);padding:14px 0;overflow:hidden;white-space:nowrap;}
         .marquee-inner{display:inline-block;animation:marquee 25s linear infinite;}
         .marquee-inner span{font-size:11px;font-weight:700;color:#fff;letter-spacing:3px;text-transform:uppercase;margin:0 30px;}
         .marquee-inner span::before{content:'★ ';color:rgba(255,255,255,0.4);}
@@ -90,18 +94,19 @@
         /* SECTIONS SHARED */
         section.content{padding:90px 64px;}
         .section-inner{max-width:1100px;margin:0 auto;}
-        .sec-tag{font-size:9px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:12px;margin-bottom:12px;}
-        .sec-tag::before{content:'';width:28px;height:2px;background:var(--red);}
+        .sec-tag{font-size:9px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+        .sec-tag::before{content:'';width:28px;height:2px;background:var(--accent);}
         .sec-title{font-size:34px;font-weight:800;text-transform:uppercase;letter-spacing:-.5px;margin-bottom:52px;}
 
-        /* RESULTS (moved up — before expertise) */
+        /* RESULTS */
         .results{background:#111;color:#fff;}
-        .results .sec-tag{color:var(--red);}
+        .results .sec-tag{color:var(--butter);}
+        .results .sec-tag::before{background:var(--butter);}
         .results .sec-title{color:#fff;}
         .results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
         .result-card{padding:48px 32px;border:1px solid rgba(255,255,255,0.06);transition:all .3s;}
-        .result-card:hover{background:rgba(221,22,22,0.08);border-color:rgba(221,22,22,0.3);}
-        .result-num{font-size:52px;font-weight:900;color:var(--red);line-height:1;margin-bottom:12px;letter-spacing:-3px;}
+        .result-card:hover{background:rgba(114,152,199,0.10);border-color:rgba(114,152,199,0.3);}
+        .result-num{font-size:52px;font-weight:900;color:var(--butter);line-height:1;margin-bottom:12px;letter-spacing:-3px;}
         .result-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
         .result-desc{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.7;}
 
@@ -109,28 +114,85 @@
         .expertise{background:var(--light);}
         .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
         .skill-card{background:#fff;padding:40px 32px;border-top:3px solid transparent;transition:all .3s;}
-        .skill-card:hover{border-top-color:var(--red);transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,0,0,.07);}
-        .sk-num{font-size:40px;font-weight:900;color:var(--red);line-height:1;margin-bottom:16px;letter-spacing:-2px;}
+        .skill-card:hover{border-top-color:var(--accent);transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,0,0,.07);}
+        .sk-num{font-size:40px;font-weight:900;color:var(--accent);line-height:1;margin-bottom:16px;letter-spacing:-2px;}
         .sk-title{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;}
         .sk-desc{font-size:12px;color:var(--gray);line-height:1.8;margin-bottom:18px;}
         .tags{display:flex;flex-wrap:wrap;gap:6px;}
-        .tag{background:rgba(221,22,22,.08);color:var(--red);padding:3px 10px;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;}
+        .tag{background:rgba(114,152,199,.12);color:var(--accent-dark);padding:3px 10px;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;}
 
         /* EXPERIENCE */
         .experience{background:#fff;}
-        .exp-row{display:grid;grid-template-columns:180px 1fr;gap:40px;padding:44px 0;border-bottom:1px solid var(--border);transition:all .3s;}
+
+        /* Desktop accordion styles */
+        .exp-row{
+            border-bottom:1px solid var(--border);
+            transition:all .3s;
+            overflow:hidden;
+        }
         .exp-row:first-child{border-top:1px solid var(--border);}
-        .exp-row:hover{background:var(--light);padding-left:20px;padding-right:20px;margin:0 -20px;}
-        .exp-date{font-size:9px;font-weight:700;color:var(--red);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;}
+
+        /* Shared toggle header — visible on BOTH desktop and mobile */
+        .exp-toggle-header{
+            display:flex;
+            align-items:flex-start;
+            justify-content:space-between;
+            gap:16px;
+            padding:28px 0;
+            cursor:pointer;
+            user-select:none;
+            transition:background .2s;
+        }
+        .exp-toggle-header:hover{background:rgba(114,152,199,0.04);}
+        .exp-toggle-header:active{background:rgba(114,152,199,0.08);}
+
+        .exp-toggle-left{flex:1;display:flex;gap:40px;align-items:flex-start;}
+
+        /* Date col inside toggle */
+        .exp-toggle-date-col{
+            flex:0 0 160px;
+        }
+        .exp-date{font-size:9px;font-weight:700;color:var(--accent);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;}
         .exp-co{font-size:11px;font-weight:700;color:var(--dark);text-transform:uppercase;letter-spacing:.5px;line-height:1.6;}
-        .exp-jobtitle{font-size:19px;font-weight:800;text-transform:uppercase;letter-spacing:-.3px;margin-bottom:6px;}
-        .exp-badge{display:inline-block;background:var(--red);color:#fff;padding:2px 10px;font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;}
+
+        /* Title col inside toggle */
+        .exp-toggle-title-col{flex:1;}
+        .exp-jobtitle{font-size:19px;font-weight:800;text-transform:uppercase;letter-spacing:-.3px;margin-bottom:4px;}
+        .exp-badge-inline{display:inline-block;background:var(--accent);color:#fff;padding:2px 10px;font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;}
+
+        .exp-toggle-icon{
+            width:36px;height:36px;
+            border-radius:50%;
+            border:2px solid var(--border);
+            display:flex;align-items:center;justify-content:center;
+            font-size:20px;font-weight:300;color:var(--gray);
+            flex-shrink:0;
+            transition:all .3s;
+            margin-top:4px;
+        }
+        .exp-row.open .exp-toggle-icon{
+            background:var(--accent);border-color:var(--accent);color:#fff;
+            transform:rotate(45deg);
+        }
+
+        /* Collapsible body */
+        .exp-body{
+            max-height:0;
+            overflow:hidden;
+            transition:max-height 0.4s ease, padding 0.3s ease;
+            padding:0 0 0 200px;
+        }
+        .exp-row.open .exp-body{
+            max-height:600px;
+            padding:0 0 28px 200px;
+        }
+
         .exp-bullets{list-style:none;}
         .exp-bullets li{padding:4px 0 4px 18px;position:relative;color:var(--gray);font-size:12px;line-height:1.8;}
-        .exp-bullets li::before{content:'—';color:var(--red);position:absolute;left:0;font-weight:700;}
+        .exp-bullets li::before{content:'—';color:var(--accent);position:absolute;left:0;font-weight:700;}
         .exp-bullets strong{color:var(--dark);font-weight:700;}
 
-        /* BRANDS — all 4 in one row */
+        /* BRANDS */
         .brands-section{background:var(--cream);}
         .brands-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
         .brand-card{background:#fff;padding:36px 28px;transition:all .3s;}
@@ -138,21 +200,19 @@
         .brand-header{display:flex;align-items:center;gap:14px;margin-bottom:16px;}
         .brand-logo-img{width:36px;height:36px;border-radius:6px;object-fit:contain;background:var(--light);padding:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:18px;}
         .brand-logo-img img{width:100%;height:100%;object-fit:contain;}
-        .brand-logo-placeholder{width:36px;height:36px;border-radius:6px;background:var(--light);border:2px dashed var(--border);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;cursor:pointer;transition:all .2s;}
-        .brand-logo-placeholder:hover{border-color:var(--red);background:rgba(221,22,22,0.04);}
         .brand-logo{font-size:18px;font-weight:900;text-transform:uppercase;letter-spacing:-0.5px;position:relative;display:inline-block;}
-        .brand-logo::after{content:'';position:absolute;bottom:-6px;left:0;width:24px;height:3px;background:var(--red);}
-        .brand-sector{font-size:8px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:16px;margin-top:14px;}
+        .brand-logo::after{content:'';position:absolute;bottom:-6px;left:0;width:24px;height:3px;background:var(--accent);}
+        .brand-sector{font-size:8px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:16px;margin-top:14px;}
         .brand-desc{font-size:11px;color:var(--gray);line-height:1.8;margin-bottom:20px;}
         .brand-results{display:flex;gap:24px;}
         .br-num{font-size:20px;font-weight:900;color:var(--dark);}
         .br-label{font-size:9px;color:var(--gray);text-transform:uppercase;letter-spacing:1px;margin-top:3px;}
 
-        /* TOOLS — moved to bottom */
+        /* TOOLS */
         .tools-section{background:var(--light);}
         .tools-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;}
         .tool-card{background:#fff;padding:28px 16px;text-align:center;transition:all .3s;cursor:default;}
-        .tool-card:hover{background:var(--red);}
+        .tool-card:hover{background:var(--accent);}
         .tool-card:hover .tool-name,.tool-card:hover .tool-cat{color:#fff;}
         .tool-icon{margin-bottom:10px;height:40px;display:flex;align-items:center;justify-content:center;}
         .tool-icon img{max-height:32px;max-width:32px;object-fit:contain;}
@@ -163,35 +223,28 @@
         .education{background:#fff;}
         .edu-row{display:grid;grid-template-columns:180px 1fr;gap:40px;padding:40px 0;border-bottom:1px solid var(--border);}
         .edu-row:first-child{border-top:1px solid var(--border);}
-        .edu-year{font-size:9px;font-weight:700;color:var(--red);letter-spacing:2px;text-transform:uppercase;}
+        .edu-year{font-size:9px;font-weight:700;color:var(--accent);letter-spacing:2px;text-transform:uppercase;}
         .edu-degree{font-size:17px;font-weight:800;text-transform:uppercase;letter-spacing:-.2px;margin-bottom:6px;}
         .edu-school{font-size:11px;font-weight:600;color:var(--gray);letter-spacing:.5px;text-transform:uppercase;margin-bottom:12px;}
         .edu-note{font-size:12px;color:var(--gray);line-height:1.7;}
 
         /* CONTACT */
-        .contact{background:var(--red);color:#fff;}
-        .contact .sec-tag{color:rgba(255,255,255,0.5);}
-        .contact .sec-tag::before{background:rgba(255,255,255,0.5);}
+        .contact{background:var(--accent);color:#fff;}
+        .contact .sec-tag{color:rgba(255,255,255,0.6);}
+        .contact .sec-tag::before{background:rgba(255,255,255,0.6);}
         .contact .sec-title{color:#fff;}
-        .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
-        .contact-copy{font-size:14px;line-height:1.9;color:rgba(255,255,255,0.7);margin-bottom:40px;}
+        .contact-copy{font-size:14px;line-height:1.9;color:rgba(255,255,255,0.75);margin-bottom:40px;}
         .contact-links{display:flex;flex-direction:column;gap:16px;}
-        .contact-link{display:flex;align-items:center;gap:20px;text-decoration:none;color:#fff;padding:20px 24px;border:1px solid rgba(255,255,255,0.2);transition:all .3s;}
-        .contact-link:hover{background:rgba(255,255,255,0.1);transform:translateX(8px);}
+        .contact-link{display:flex;align-items:center;gap:20px;text-decoration:none;color:#fff;padding:20px 24px;border:1px solid rgba(255,255,255,0.25);transition:all .3s;}
+        .contact-link:hover{background:rgba(255,255,255,0.12);transform:translateX(8px);}
         .cl-icon{font-size:18px;width:40px;text-align:center;}
-        .cl-label{font-size:9px;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
+        .cl-label{font-size:9px;color:rgba(255,255,255,0.55);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
         .cl-value{font-size:13px;font-weight:700;}
-
-        .contact-form{background:#fff;padding:48px;border-radius:4px;}
-        .cf-input{width:100%;background:var(--light);border:1px solid var(--border);padding:16px;margin-bottom:16px;font-family:inherit;font-size:13px;outline:none;transition:.3s;}
-        .cf-input:focus{border-color:var(--red);}
-        .cf-submit{width:100%;background:var(--red);color:#fff;border:none;padding:18px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;cursor:pointer;transition:.3s;}
-        .cf-submit:hover{background:#111;}
 
         /* FOOTER */
         footer{padding:60px 64px;background:#fff;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
         .footer-brand{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:2px;}
-        .footer-brand span{color:var(--red);}
+        .footer-brand span{color:var(--accent);}
         footer p{font-size:10px;color:var(--gray);font-weight:600;text-transform:uppercase;letter-spacing:1px;}
 
         /* ANIMATIONS */
@@ -209,6 +262,8 @@
             .tools-grid{grid-template-columns:repeat(4,1fr);}
             .results-grid{grid-template-columns:1fr 1fr;}
             .brands-row{grid-template-columns:repeat(2,1fr);}
+            .exp-body{padding-left:0 !important;}
+            .exp-toggle-date-col{flex:0 0 120px;}
         }
 
         /* ===================== MOBILE ===================== */
@@ -230,128 +285,48 @@
 
             /* RESULTS mobile — horizontal swipe */
             .results-grid{
-                display:flex;
-                flex-direction:row;
-                overflow-x:auto;
-                gap:0;
-                -webkit-overflow-scrolling:touch;
-                scroll-snap-type:x mandatory;
-                padding-bottom:16px;
-                margin:0 -20px;
-                padding-left:20px;
+                display:flex;flex-direction:row;overflow-x:auto;gap:0;
+                -webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;
+                padding-bottom:16px;margin:0 -20px;padding-left:20px;
             }
             .results-grid::-webkit-scrollbar{height:3px;}
             .results-grid::-webkit-scrollbar-track{background:rgba(255,255,255,0.1);}
-            .results-grid::-webkit-scrollbar-thumb{background:var(--red);border-radius:2px;}
-            .result-card{
-                flex:0 0 72vw;
-                scroll-snap-align:start;
-                border:1px solid rgba(255,255,255,0.06);
-                margin-right:2px;
-            }
+            .results-grid::-webkit-scrollbar-thumb{background:var(--butter);border-radius:2px;}
+            .result-card{flex:0 0 72vw;scroll-snap-align:start;border:1px solid rgba(255,255,255,0.06);margin-right:2px;}
             .result-card:last-child{margin-right:20px;}
             .result-num{font-size:40px;}
 
-            /* EXPERIENCE mobile — left col becomes top header, then content */
-            .exp-row{
-                display:block;
-                padding:0;
-                margin-bottom:0;
-                border-bottom:none;
-            }
-            .exp-row:hover{background:transparent;padding:0;margin:0;}
-            .exp-row:first-child{border-top:none;}
-
-            /* Toggle accordion for experience */
-            .exp-toggle-header{
-                display:flex;
-                align-items:flex-start;
-                justify-content:space-between;
-                gap:12px;
-                padding:20px 0;
-                border-bottom:1px solid var(--border);
-                cursor:pointer;
-                user-select:none;
-            }
-            .exp-toggle-header:active{background:rgba(0,0,0,0.02);}
-            .exp-toggle-left{flex:1;}
-            .exp-toggle-company{font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--dark);margin-bottom:4px;}
-            .exp-toggle-title{font-size:11px;font-weight:600;color:var(--gray);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;}
-            .exp-toggle-date{font-size:9px;font-weight:700;color:var(--red);letter-spacing:2px;text-transform:uppercase;}
-            .exp-toggle-icon{
-                width:32px;height:32px;
-                border-radius:50%;
-                border:2px solid var(--border);
-                display:flex;align-items:center;justify-content:center;
-                font-size:18px;font-weight:300;color:var(--gray);
-                flex-shrink:0;
-                transition:all .3s;
-                margin-top:4px;
-            }
-            .exp-row.open .exp-toggle-icon{
-                background:var(--red);border-color:var(--red);color:#fff;
-                transform:rotate(45deg);
-            }
-            .exp-body{
-                display:none;
-                padding:16px 0 24px 0;
-                border-bottom:1px solid var(--border);
-            }
-            .exp-row.open .exp-body{display:block;}
-
-            /* Hide desktop exp-left on mobile (we use toggle header instead) */
-            .exp-desktop-left{display:none;}
-            .exp-desktop-right{width:100%;}
+            /* Experience mobile adjustments */
+            .exp-toggle-left{flex-direction:column;gap:4px;}
+            .exp-toggle-date-col{flex:0 0 auto;}
+            .exp-jobtitle{font-size:14px;}
+            .exp-body.open-mobile{max-height:600px;padding:0 0 24px 0 !important;}
 
             /* SKILLS grid 1 col on small */
             .skills-grid{grid-template-columns:1fr;}
 
             /* TOOLS mobile — horizontal swipe */
             .tools-grid{
-                display:flex;
-                flex-direction:row;
-                overflow-x:auto;
-                -webkit-overflow-scrolling:touch;
-                scroll-snap-type:x mandatory;
-                gap:0;
-                margin:0 -20px;
-                padding-left:20px;
-                padding-bottom:12px;
+                display:flex;flex-direction:row;overflow-x:auto;
+                -webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;
+                gap:0;margin:0 -20px;padding-left:20px;padding-bottom:12px;
             }
             .tools-grid::-webkit-scrollbar{height:3px;}
             .tools-grid::-webkit-scrollbar-track{background:var(--border);}
-            .tools-grid::-webkit-scrollbar-thumb{background:var(--red);border-radius:2px;}
-            .tool-card{
-                flex:0 0 140px;
-                scroll-snap-align:start;
-                margin-right:2px;
-            }
+            .tools-grid::-webkit-scrollbar-thumb{background:var(--accent);border-radius:2px;}
+            .tool-card{flex:0 0 140px;scroll-snap-align:start;margin-right:2px;}
             .tool-card:last-child{margin-right:20px;}
 
             /* BRANDS mobile — horizontal swipe */
             .brands-row{
-                display:flex;
-                flex-direction:row;
-                overflow-x:auto;
-                -webkit-overflow-scrolling:touch;
-                scroll-snap-type:x mandatory;
-                gap:0;
-                margin:0 -20px;
-                padding-left:20px;
-                padding-bottom:12px;
+                display:flex;flex-direction:row;overflow-x:auto;
+                -webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;
+                gap:0;margin:0 -20px;padding-left:20px;padding-bottom:12px;
             }
             .brands-row::-webkit-scrollbar{height:3px;}
-            .brands-row::-webkit-scrollbar-thumb{background:var(--red);}
-            .brand-card{
-                flex:0 0 78vw;
-                scroll-snap-align:start;
-                margin-right:2px;
-            }
+            .brands-row::-webkit-scrollbar-thumb{background:var(--accent);}
+            .brand-card{flex:0 0 78vw;scroll-snap-align:start;margin-right:2px;}
             .brand-card:last-child{margin-right:20px;}
-
-            /* Contact */
-            .contact-grid{grid-template-columns:1fr;gap:40px;}
-            .contact-form{padding:28px 20px;}
 
             footer{flex-direction:column;gap:20px;text-align:center;padding:40px 20px;}
 
@@ -361,7 +336,7 @@
                 color:var(--gray);text-align:right;margin-bottom:12px;
                 display:flex;align-items:center;justify-content:flex-end;gap:6px;
             }
-            .swipe-hint::after{content:'→';color:var(--red);}
+            .swipe-hint::after{content:'→';color:var(--accent);}
         }
 
         @media(max-width:480px){
@@ -371,11 +346,7 @@
             nav{padding:14px 20px;}
         }
 
-        /* Desktop: hide mobile-only elements */
         @media(min-width:769px){
-            .exp-toggle-header{display:none;}
-            .exp-body{display:block !important;}
-            .exp-desktop-left{display:block;}
             .swipe-hint{display:none;}
         }
     </style>
@@ -412,7 +383,7 @@
     <div class="hero-right">
         <div class="hero-tag" data-en="Senior Digital Marketer" data-vi="Chuyên viên Marketing Kỹ thuật số">Senior Digital Marketer</div>
         <h1 style="font-size:clamp(32px,5vw,58px);font-weight:900;text-transform:uppercase;letter-spacing:-2px;line-height:1.05;margin-bottom:24px;">
-            Ngo Tran<br><span style="color:var(--red);">Anh Thu</span>
+            Ngo Tran<br><span style="color:var(--accent);">Anh Thu</span>
         </h1>
         <p class="hero-summary" id="heroSummary">
             Results-driven marketer with over <strong>4 years of experience</strong> in <strong>Meta & Google Ads</strong>, optimizing conversion funnels and generating quality leads for <strong>Ordinaire, Bonario & Reverie</strong>.
@@ -445,7 +416,7 @@
     </div>
 </div>
 
-<!-- ★ RESULTS (moved to 1st section after hero) -->
+<!-- RESULTS -->
 <section class="content results" id="results">
     <div class="section-inner">
         <div class="sec-tag" data-en="By The Numbers" data-vi="Con số nổi bật">By The Numbers</div>
@@ -476,7 +447,7 @@
     </div>
 </section>
 
-<!-- ★ EXPERTISE (moved to 2nd section) -->
+<!-- EXPERTISE -->
 <section class="content expertise" id="expertise">
     <div class="section-inner">
         <div class="sec-tag" data-en="Core Expertise" data-vi="Chuyên môn cốt lõi">Core Expertise</div>
@@ -511,25 +482,21 @@
         <h2 class="sec-title" data-en="Professional Experience" data-vi="Kinh nghiệm làm việc">Professional Experience</h2>
 
         <!-- EXP 1 -->
-        <div class="exp-row fade-in">
-            <!-- Mobile toggle header -->
+        <div class="exp-row fade-in open">
             <div class="exp-toggle-header" onclick="toggleExp(this)">
                 <div class="exp-toggle-left">
-                    <div class="exp-toggle-company">Bonario · Ordinaire · Reverie</div>
-                    <div class="exp-toggle-title" data-en="Senior Digital Marketing Executive" data-vi="Senior Digital Marketing Executive">Senior Digital Marketing Executive</div>
-                    <div class="exp-toggle-date">07/2024 — <span data-en="Present" data-vi="Hiện tại">Present</span></div>
+                    <div class="exp-toggle-date-col">
+                        <div class="exp-date">07/2024 — <span data-en="Present" data-vi="Hiện tại">Present</span></div>
+                        <div class="exp-co">Bonario Vietnam<br>Ordinaire · Reverie</div>
+                    </div>
+                    <div class="exp-toggle-title-col">
+                        <div class="exp-jobtitle" data-en="Senior Digital Marketing Executive" data-vi="Senior Digital Marketing Executive">Senior Digital Marketing Executive</div>
+                        <span class="exp-badge-inline" data-en="Current Role" data-vi="Vị trí hiện tại">Current Role</span>
+                    </div>
                 </div>
                 <div class="exp-toggle-icon">+</div>
             </div>
-            <!-- Desktop left col -->
-            <div class="exp-desktop-left">
-                <div class="exp-date">07/2024 — <span data-en="Present" data-vi="Hiện tại">Present</span></div>
-                <div class="exp-co">Bonario Vietnam<br>Ordinaire · Reverie</div>
-            </div>
-            <!-- Content (desktop always visible, mobile toggled) -->
-            <div class="exp-desktop-right exp-body">
-                <div class="exp-jobtitle" data-en="Senior Digital Marketing Executive" data-vi="Senior Digital Marketing Executive">Senior Digital Marketing Executive</div>
-                <span class="exp-badge" data-en="Current Role" data-vi="Vị trí hiện tại">Current Role</span>
+            <div class="exp-body">
                 <ul class="exp-bullets">
                     <li data-en="Managed <strong>Meta Ads and Google Ads</strong> campaigns with monthly budgets of <strong>50–100M VND</strong>, generating <strong>500+ qualified leads per month</strong>" data-vi="Quản lý chiến dịch <strong>Meta Ads và Google Ads</strong> với ngân sách hàng tháng <strong>50–100 triệu VND</strong>, tạo ra <strong>500+ khách hàng tiềm năng/tháng</strong>">Managed <strong>Meta Ads and Google Ads</strong> campaigns with monthly budgets of <strong>50–100M VND</strong>, generating <strong>500+ qualified leads per month</strong></li>
                     <li data-en="Achieved <strong>100%+ YoY growth</strong> in online revenue through paid media, website optimization, and funnel improvements" data-vi="Đạt <strong>tăng trưởng doanh thu online 100%+ YoY</strong> thông qua paid media, tối ưu website và cải thiện phễu">Achieved <strong>100%+ YoY growth</strong> in online revenue through paid media, website optimization, and funnel improvements</li>
@@ -545,19 +512,18 @@
         <div class="exp-row fade-in">
             <div class="exp-toggle-header" onclick="toggleExp(this)">
                 <div class="exp-toggle-left">
-                    <div class="exp-toggle-company">Archcafé JSC</div>
-                    <div class="exp-toggle-title" data-en="Marketing Executive" data-vi="Chuyên viên Marketing">Marketing Executive</div>
-                    <div class="exp-toggle-date">07/2023 — 04/2024</div>
+                    <div class="exp-toggle-date-col">
+                        <div class="exp-date">07/2023 — 04/2024</div>
+                        <div class="exp-co">Archcafé JSC</div>
+                    </div>
+                    <div class="exp-toggle-title-col">
+                        <div class="exp-jobtitle" data-en="Marketing Executive" data-vi="Chuyên viên Marketing">Marketing Executive</div>
+                        <span class="exp-badge-inline" data-en="F&B Brand" data-vi="Thương hiệu F&B">F&B Brand</span>
+                    </div>
                 </div>
                 <div class="exp-toggle-icon">+</div>
             </div>
-            <div class="exp-desktop-left">
-                <div class="exp-date">07/2023 — 04/2024</div>
-                <div class="exp-co">Archcafé JSC</div>
-            </div>
-            <div class="exp-desktop-right exp-body">
-                <div class="exp-jobtitle" data-en="Marketing Executive" data-vi="Chuyên viên Marketing">Marketing Executive</div>
-                <span class="exp-badge" data-en="F&B Brand" data-vi="Thương hiệu F&B">F&B Brand</span>
+            <div class="exp-body">
                 <ul class="exp-bullets">
                     <li data-en="Executed <strong>Meta Ads and TikTok Ads</strong> campaigns integrated with online and offline marketing activities" data-vi="Triển khai chiến dịch <strong>Meta Ads và TikTok Ads</strong> tích hợp với các hoạt động marketing online và offline">Executed <strong>Meta Ads and TikTok Ads</strong> campaigns integrated with online and offline marketing activities</li>
                     <li data-en="Increased <strong>Facebook traffic by 20%</strong> through content and campaign optimization" data-vi="Tăng <strong>lưu lượng Facebook 20%</strong> thông qua tối ưu hóa nội dung và chiến dịch">Increased <strong>Facebook traffic by 20%</strong> through content and campaign optimization</li>
@@ -567,23 +533,22 @@
             </div>
         </div>
 
-        <!-- EXP 3 — Operations Executive (expanded bullets) -->
+        <!-- EXP 3 -->
         <div class="exp-row fade-in">
             <div class="exp-toggle-header" onclick="toggleExp(this)">
                 <div class="exp-toggle-left">
-                    <div class="exp-toggle-company">The Open Space</div>
-                    <div class="exp-toggle-title" data-en="Marketing & Operations Executive" data-vi="Chuyên viên Marketing & Vận hành">Marketing & Operations Executive</div>
-                    <div class="exp-toggle-date">01/2022 — 03/2023</div>
+                    <div class="exp-toggle-date-col">
+                        <div class="exp-date">01/2022 — 03/2023</div>
+                        <div class="exp-co">The Open Space</div>
+                    </div>
+                    <div class="exp-toggle-title-col">
+                        <div class="exp-jobtitle" data-en="Marketing & Operations Executive" data-vi="Chuyên viên Marketing & Vận hành">Marketing & Operations Executive</div>
+                        <span class="exp-badge-inline" data-en="Events & B2B" data-vi="Sự kiện & B2B">Events & B2B</span>
+                    </div>
                 </div>
                 <div class="exp-toggle-icon">+</div>
             </div>
-            <div class="exp-desktop-left">
-                <div class="exp-date">01/2022 — 03/2023</div>
-                <div class="exp-co">The Open Space</div>
-            </div>
-            <div class="exp-desktop-right exp-body">
-                <div class="exp-jobtitle" data-en="Marketing & Operations Executive" data-vi="Chuyên viên Marketing & Vận hành">Marketing & Operations Executive</div>
-                <span class="exp-badge" data-en="Events & B2B" data-vi="Sự kiện & B2B">Events & B2B</span>
+            <div class="exp-body">
                 <ul class="exp-bullets">
                     <li data-en="Managed social content across Facebook, Zalo, TikTok — maintaining consistent brand voice and posting schedule" data-vi="Quản lý nội dung mạng xã hội trên Facebook, Zalo, TikTok — duy trì giọng nói thương hiệu nhất quán và lịch đăng bài">Managed social content across Facebook, Zalo, TikTok — maintaining consistent brand voice and posting schedule</li>
                     <li data-en="Organized <strong>6 workshops/month</strong> (10–20 participants each), handling end-to-end event logistics and promotion" data-vi="Tổ chức <strong>6 workshop/tháng</strong> (10–20 người tham dự mỗi buổi), xử lý hậu cần và quảng bá sự kiện từ đầu đến cuối">Organized <strong>6 workshops/month</strong> (10–20 participants each), handling end-to-end event logistics and promotion</li>
@@ -594,23 +559,22 @@
             </div>
         </div>
 
-        <!-- EXP 4 — Intern (expanded bullets) -->
+        <!-- EXP 4 -->
         <div class="exp-row fade-in">
             <div class="exp-toggle-header" onclick="toggleExp(this)">
                 <div class="exp-toggle-left">
-                    <div class="exp-toggle-company">Dynamic Consulting</div>
-                    <div class="exp-toggle-title" data-en="Marketing Intern" data-vi="Thực tập sinh Marketing">Marketing Intern</div>
-                    <div class="exp-toggle-date">06/2021 — 12/2021</div>
+                    <div class="exp-toggle-date-col">
+                        <div class="exp-date">06/2021 — 12/2021</div>
+                        <div class="exp-co">Dynamic Consulting</div>
+                    </div>
+                    <div class="exp-toggle-title-col">
+                        <div class="exp-jobtitle" data-en="Marketing Intern" data-vi="Thực tập sinh Marketing">Marketing Intern</div>
+                        <span class="exp-badge-inline" data-en="First Role" data-vi="Vai trò đầu tiên">First Role</span>
+                    </div>
                 </div>
                 <div class="exp-toggle-icon">+</div>
             </div>
-            <div class="exp-desktop-left">
-                <div class="exp-date">06/2021 — 12/2021</div>
-                <div class="exp-co">Dynamic Consulting</div>
-            </div>
-            <div class="exp-desktop-right exp-body">
-                <div class="exp-jobtitle" data-en="Marketing Intern" data-vi="Thực tập sinh Marketing">Marketing Intern</div>
-                <span class="exp-badge" data-en="First Role" data-vi="Vai trò đầu tiên">First Role</span>
+            <div class="exp-body">
                 <ul class="exp-bullets">
                     <li data-en="Content writing and social media design for company projects — building core copywriting and visual communication skills" data-vi="Viết nội dung và thiết kế mạng xã hội cho các dự án công ty — xây dựng kỹ năng copywriting và truyền thông hình ảnh cốt lõi">Content writing and social media design for company projects — building core copywriting and visual communication skills</li>
                     <li data-en="Ran <strong>Email Marketing & Facebook Ads</strong> campaigns, learning audience segmentation and basic funnel strategy" data-vi="Triển khai các chiến dịch <strong>Email Marketing & Facebook Ads</strong>, học cách phân khúc đối tượng và chiến lược phễu cơ bản">Ran <strong>Email Marketing & Facebook Ads</strong> campaigns, learning audience segmentation and basic funnel strategy</li>
@@ -624,7 +588,7 @@
     </div>
 </section>
 
-<!-- BRANDS — 4 in 1 row with logo placeholder -->
+<!-- BRANDS -->
 <section class="content brands-section" id="brands">
     <div class="section-inner">
         <div class="sec-tag" data-en="Portfolio" data-vi="Danh mục thương hiệu">Portfolio</div>
@@ -683,7 +647,7 @@
     </div>
 </section>
 
-<!-- TOOLS — moved to bottom / last before contact -->
+<!-- TOOLS -->
 <section class="content tools-section" id="tools">
     <div class="section-inner">
         <div class="sec-tag" data-en="Tech Stack" data-vi="Công cụ sử dụng">Tech Stack</div>
@@ -706,29 +670,18 @@
 <!-- CONTACT -->
 <section class="content contact" id="contact">
     <div class="section-inner">
-        <div class="contact-grid">
-            <div>
-                <div class="sec-tag" data-en="Get In Touch" data-vi="Liên hệ">Get In Touch</div>
-                <h2 class="sec-title" data-en="Open to New Opportunities" data-vi="Sẵn sàng cho cơ hội mới">Open to New Opportunities</h2>
-                <p class="contact-copy" data-en="Open to new opportunities, senior roles, and interesting marketing challenges in Ho Chi Minh City." data-vi="Sẵn sàng cho các cơ hội mới, vị trí cấp cao và những thử thách marketing thú vị tại TP. Hồ Chí Minh.">Open to new opportunities, senior roles, and interesting marketing challenges in Ho Chi Minh City.</p>
-                <div class="contact-links">
-                    <a href="mailto:ngotrananhthu99@gmail.com" class="contact-link">
-                        <span class="cl-icon">✉</span>
-                        <div><div class="cl-label">Email</div><div class="cl-value">ngotrananhthu99@gmail.com</div></div>
-                    </a>
-                    <a href="https://www.linkedin.com/in/alexngo0211" target="_blank" class="contact-link">
-                        <span class="cl-icon">in</span>
-                        <div><div class="cl-label">LinkedIn</div><div class="cl-value">linkedin.com/in/alexngo0211</div></div>
-                    </a>
-                </div>
-            </div>
-            <div>
-                <form class="contact-form" onsubmit="handleForm(event)">
-                    <input class="cf-input" type="text" id="inputName" placeholder="Your Name" required data-en-placeholder="Your Name" data-vi-placeholder="Họ và tên">
-                    <input class="cf-input" type="email" id="inputEmail" placeholder="Your Email" required data-en-placeholder="Your Email" data-vi-placeholder="Email của bạn">
-                    <button type="submit" class="cf-submit" data-en="Send Message →" data-vi="Gửi tin nhắn →">Send Message →</button>
-                </form>
-            </div>
+        <div class="sec-tag" data-en="Get In Touch" data-vi="Liên hệ">Get In Touch</div>
+        <h2 class="sec-title" data-en="Open to New Opportunities" data-vi="Sẵn sàng cho cơ hội mới">Open to New Opportunities</h2>
+        <p class="contact-copy" data-en="Open to new opportunities, senior roles, and interesting marketing challenges in Ho Chi Minh City." data-vi="Sẵn sàng cho các cơ hội mới, vị trí cấp cao và những thử thách marketing thú vị tại TP. Hồ Chí Minh.">Open to new opportunities, senior roles, and interesting marketing challenges in Ho Chi Minh City.</p>
+        <div class="contact-links">
+            <a href="mailto:ngotrananhthu99@gmail.com" class="contact-link">
+                <span class="cl-icon">✉</span>
+                <div><div class="cl-label">Email</div><div class="cl-value">ngotrananhthu99@gmail.com</div></div>
+            </a>
+            <a href="https://www.linkedin.com/in/alexngo0211" target="_blank" class="contact-link">
+                <span class="cl-icon">in</span>
+                <div><div class="cl-label">LinkedIn</div><div class="cl-value">linkedin.com/in/alexngo0211</div></div>
+            </a>
         </div>
     </div>
 </section>
@@ -745,7 +698,7 @@
         document.getElementById('navLinks').classList.toggle('active');
     }
 
-    // Experience accordion toggle (mobile)
+    // Experience accordion toggle (both desktop & mobile)
     function toggleExp(header) {
         const row = header.closest('.exp-row');
         const isOpen = row.classList.contains('open');
@@ -758,13 +711,9 @@
     const translations = {
         en: {
             heroSummary: 'Results-driven marketer with over <strong>4 years of experience</strong> in <strong>Meta & Google Ads</strong>, optimizing conversion funnels and generating quality leads for <strong>Ordinaire, Bonario & Reverie</strong>.',
-            formSuccess: 'Message Sent ✓',
-            formDefault: 'Send Message →',
         },
         vi: {
             heroSummary: 'Chuyên viên Digital Marketing hướng tới kết quả với hơn <strong>4 năm kinh nghiệm</strong> thực chiến trên <strong>Meta & Google Ads</strong>, tối ưu hóa phễu chuyển đổi và tạo ra khách hàng tiềm năng chất lượng cho <strong>Ordinaire, Bonario & Reverie</strong>.',
-            formSuccess: 'Đã gửi tin nhắn ✓',
-            formDefault: 'Gửi tin nhắn →',
         }
     };
 
@@ -772,20 +721,16 @@
 
     function setLang(lang) {
         currentLang = lang;
-
         document.querySelectorAll('.lang-btn').forEach(btn => {
             btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
         });
-
         document.querySelectorAll('[data-' + lang + ']').forEach(el => {
             const val = el.getAttribute('data-' + lang);
             if (val !== null) el.innerHTML = val;
         });
-
         document.querySelectorAll('[data-' + lang + '-placeholder]').forEach(el => {
             el.placeholder = el.getAttribute('data-' + lang + '-placeholder');
         });
-
         document.getElementById('heroSummary').innerHTML = translations[lang].heroSummary;
         document.getElementById('navLinks').classList.remove('active');
     }
@@ -796,21 +741,7 @@
             if (entry.isIntersecting) entry.target.classList.add('visible');
         });
     }, { threshold: 0.1 });
-
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-    // Form handler
-    function handleForm(e) {
-        e.preventDefault();
-        const btn = e.target.querySelector('.cf-submit');
-        btn.textContent = translations[currentLang].formSuccess;
-        btn.style.background = '#111';
-        setTimeout(() => {
-            btn.textContent = translations[currentLang].formDefault;
-            btn.style.background = 'var(--red)';
-            e.target.reset();
-        }, 3000);
-    }
 </script>
 </body>
 </html>
