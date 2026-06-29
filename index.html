@@ -75,11 +75,21 @@
         .hero-tag::before{content:'';width:28px;height:2px;background:var(--accent);}
         .hero-summary{font-size:15px;color:var(--gray);line-height:1.8;margin-bottom:40px;}
         .hero-summary strong{color:var(--dark);font-weight:700;}
-        .hero-btns{display:flex;gap:16px;margin-bottom:50px;}
+        .hero-btns{display:flex;gap:16px;margin-bottom:50px;flex-wrap:wrap;}
         .btn-red{background:var(--accent);color:var(--butter);padding:16px 36px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:.3s;}
         .btn-red:hover{background:var(--accent-dark);transform:translateY(-3px);}
         .btn-ghost{border:2px solid var(--dark);color:var(--dark);padding:16px 36px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:.3s;}
         .btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-3px);}
+        /* Download CV button */
+        .btn-cv{
+            background:var(--butter);color:var(--accent);
+            padding:16px 36px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+            text-decoration:none;transition:.3s;
+            display:inline-flex;align-items:center;gap:8px;
+            border:2px solid var(--butter);
+        }
+        .btn-cv:hover{background:var(--butter-dark);border-color:var(--butter-dark);transform:translateY(-3px);}
+        .btn-cv svg{flex-shrink:0;}
         .hero-stats{display:flex;gap:56px;padding-top:32px;border-top:1px solid rgba(0,0,0,0.06);}
         .stat-num{font-size:32px;font-weight:900;color:var(--accent);line-height:1;}
         .stat-label{font-size:9px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:2px;margin-top:6px;}
@@ -333,6 +343,9 @@
                 display:flex;align-items:center;justify-content:flex-end;gap:6px;
             }
             .swipe-hint::after{content:'→';color:var(--butter);}
+
+            .hero-btns{flex-direction:column;align-items:center;}
+            .btn-cv{justify-content:center;}
         }
 
         @media(max-width:480px){
@@ -387,6 +400,20 @@
         <div class="hero-btns">
             <a href="#contact" class="btn-red" data-en="Get In Touch" data-vi="Liên hệ ngay">Get In Touch</a>
             <a href="#experience" class="btn-ghost" data-en="View Experience" data-vi="Xem kinh nghiệm">View Experience</a>
+            <a href="https://raw.githubusercontent.com/ntat0211/ntatxxi/main/03.26%20Digi.pdf"
+               download="AnhThu_CV.pdf"
+               class="btn-cv"
+               target="_blank"
+               rel="noopener noreferrer"
+               data-en="Download CV"
+               data-vi="Tải CV">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                Download CV
+            </a>
         </div>
         <div class="hero-stats">
             <div>
