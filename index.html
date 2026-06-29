@@ -87,9 +87,12 @@
             text-decoration:none;transition:.3s;
             display:inline-flex;align-items:center;gap:8px;
             border:2px solid var(--butter);
+            cursor:pointer;
         }
         .btn-cv:hover{background:var(--butter-dark);border-color:var(--butter-dark);transform:translateY(-3px);}
+        .btn-cv:active{transform:translateY(0);opacity:.85;}
         .btn-cv svg{flex-shrink:0;}
+        .btn-cv.loading{opacity:.7;pointer-events:none;}
         .hero-stats{display:flex;gap:56px;padding-top:32px;border-top:1px solid rgba(0,0,0,0.06);}
         .stat-num{font-size:32px;font-weight:900;color:var(--accent);line-height:1;}
         .stat-label{font-size:9px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:2px;margin-top:6px;}
@@ -162,7 +165,6 @@
 
         .exp-toggle-title-col{flex:1;}
         .exp-jobtitle{font-size:19px;font-weight:800;text-transform:uppercase;letter-spacing:-.3px;margin-bottom:4px;}
-        /* badge: navy bg, butter text */
         .exp-badge-inline{display:inline-block;background:var(--accent);color:var(--butter);padding:2px 10px;font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;}
 
         .exp-toggle-icon{
@@ -216,7 +218,6 @@
         .tools-section{background:var(--light);}
         .tools-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;}
         .tool-card{background:#fff;padding:28px 16px;text-align:center;transition:all .3s;cursor:default;}
-        /* hover: navy bg, butter text */
         .tool-card:hover{background:var(--accent);}
         .tool-card:hover .tool-name{color:var(--butter);}
         .tool-card:hover .tool-cat{color:rgba(242,217,141,0.75);}
@@ -289,7 +290,6 @@
             section.content{padding:56px 20px;}
             .sec-title{font-size:26px;margin-bottom:32px;}
 
-            /* RESULTS mobile — horizontal swipe */
             .results-grid{
                 display:flex;flex-direction:row;overflow-x:auto;gap:0;
                 -webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;
@@ -302,16 +302,13 @@
             .result-card:last-child{margin-right:20px;}
             .result-num{font-size:40px;}
 
-            /* Experience mobile adjustments */
             .exp-toggle-left{flex-direction:column;gap:4px;}
             .exp-toggle-date-col{flex:0 0 auto;}
             .exp-jobtitle{font-size:14px;}
             .exp-body.open-mobile{max-height:600px;padding:0 0 24px 0 !important;}
 
-            /* SKILLS grid 1 col on small */
             .skills-grid{grid-template-columns:1fr;}
 
-            /* TOOLS mobile — horizontal swipe */
             .tools-grid{
                 display:flex;flex-direction:row;overflow-x:auto;
                 -webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;
@@ -323,7 +320,6 @@
             .tool-card{flex:0 0 140px;scroll-snap-align:start;margin-right:2px;}
             .tool-card:last-child{margin-right:20px;}
 
-            /* BRANDS mobile — horizontal swipe */
             .brands-row{
                 display:flex;flex-direction:row;overflow-x:auto;
                 -webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;
@@ -336,7 +332,6 @@
 
             footer{flex-direction:column;gap:20px;text-align:center;padding:40px 20px;}
 
-            /* Swipe hint */
             .swipe-hint{
                 font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
                 color:rgba(242,217,141,0.8);text-align:right;margin-bottom:12px;
@@ -345,7 +340,7 @@
             .swipe-hint::after{content:'→';color:var(--butter);}
 
             .hero-btns{flex-direction:column;align-items:center;}
-            .btn-cv{justify-content:center;}
+            .btn-cv{justify-content:center;width:100%;max-width:280px;}
         }
 
         @media(max-width:480px){
@@ -400,11 +395,10 @@
         <div class="hero-btns">
             <a href="#contact" class="btn-red" data-en="Get In Touch" data-vi="Liên hệ ngay">Get In Touch</a>
             <a href="#experience" class="btn-ghost" data-en="View Experience" data-vi="Xem kinh nghiệm">View Experience</a>
-            <a href="https://raw.githubusercontent.com/ntat0211/ntatxxi/main/03.26%20Digi.pdf"
-               download="Ngo-Tran-Anh-Thu-CV.pdf"
+            <button
                class="btn-cv"
-               target="_blank"
-               rel="noopener noreferrer"
+               id="cvDownloadBtn"
+               onclick="downloadCV()"
                data-en="Download CV"
                data-vi="Tải CV">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -412,8 +406,8 @@
                     <polyline points="7 10 12 15 17 10"/>
                     <line x1="12" y1="15" x2="12" y2="3"/>
                 </svg>
-                Download CV
-            </a>
+                <span id="cvBtnLabel">Download CV</span>
+            </button>
         </div>
         <div class="hero-stats">
             <div>
@@ -504,7 +498,6 @@
         <div class="sec-tag" data-en="Career Journey" data-vi="Hành trình sự nghiệm">Career Journey</div>
         <h2 class="sec-title" data-en="Professional Experience" data-vi="Kinh nghiệm làm việc">Professional Experience</h2>
 
-        <!-- EXP 1 -->
         <div class="exp-row fade-in open">
             <div class="exp-toggle-header" onclick="toggleExp(this)">
                 <div class="exp-toggle-left">
@@ -531,7 +524,6 @@
             </div>
         </div>
 
-        <!-- EXP 2 -->
         <div class="exp-row fade-in">
             <div class="exp-toggle-header" onclick="toggleExp(this)">
                 <div class="exp-toggle-left">
@@ -556,7 +548,6 @@
             </div>
         </div>
 
-        <!-- EXP 3 -->
         <div class="exp-row fade-in">
             <div class="exp-toggle-header" onclick="toggleExp(this)">
                 <div class="exp-toggle-left">
@@ -582,7 +573,6 @@
             </div>
         </div>
 
-        <!-- EXP 4 -->
         <div class="exp-row fade-in">
             <div class="exp-toggle-header" onclick="toggleExp(this)">
                 <div class="exp-toggle-left">
@@ -721,13 +711,46 @@
         document.getElementById('navLinks').classList.toggle('active');
     }
 
-    // Experience accordion toggle (both desktop & mobile)
+    // Experience accordion toggle
     function toggleExp(header) {
         const row = header.closest('.exp-row');
         const isOpen = row.classList.contains('open');
-        // Close all first
         document.querySelectorAll('.exp-row.open').forEach(r => r.classList.remove('open'));
         if (!isOpen) row.classList.add('open');
+    }
+
+    // CV Download — JS blob to force download on all devices including mobile
+    function downloadCV() {
+        const btn = document.getElementById('cvDownloadBtn');
+        const label = document.getElementById('cvBtnLabel');
+        const originalText = label.textContent;
+
+        btn.classList.add('loading');
+        label.textContent = currentLang === 'vi' ? 'Đang tải...' : 'Loading...';
+
+        fetch('https://raw.githubusercontent.com/ntat0211/ntatxxi/main/03.26%20Digi.pdf')
+            .then(function(res) {
+                if (!res.ok) throw new Error('Network response was not ok');
+                return res.blob();
+            })
+            .then(function(blob) {
+                var url = URL.createObjectURL(blob);
+                var a = document.createElement('a');
+                a.href = url;
+                a.download = 'Ngo-Tran-Anh-Thu-CV.pdf';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                setTimeout(function() { URL.revokeObjectURL(url); }, 1000);
+                btn.classList.remove('loading');
+                label.textContent = originalText;
+            })
+            .catch(function() {
+                // Fallback: open in new tab if fetch fails (e.g. some mobile browsers)
+                window.open('https://raw.githubusercontent.com/ntat0211/ntatxxi/main/03.26%20Digi.pdf', '_blank');
+                btn.classList.remove('loading');
+                label.textContent = originalText;
+            });
     }
 
     // Language Switcher
@@ -751,10 +774,10 @@
             const val = el.getAttribute('data-' + lang);
             if (val !== null) el.innerHTML = val;
         });
-        document.querySelectorAll('[data-' + lang + '-placeholder]').forEach(el => {
-            el.placeholder = el.getAttribute('data-' + lang + '-placeholder');
-        });
         document.getElementById('heroSummary').innerHTML = translations[lang].heroSummary;
+        // Update CV button label separately (it uses a span inside)
+        const cvLabel = document.getElementById('cvBtnLabel');
+        if (cvLabel) cvLabel.textContent = lang === 'vi' ? 'Tải CV' : 'Download CV';
         document.getElementById('navLinks').classList.remove('active');
     }
 
