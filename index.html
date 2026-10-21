@@ -212,9 +212,9 @@
         .brand-logo::after{content:'';position:absolute;bottom:-6px;left:0;width:24px;height:3px;background:var(--accent);}
         .brand-sector{font-size:8px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:16px;margin-top:14px;}
         .brand-desc{font-size:11px;color:var(--gray);line-height:1.8;margin-bottom:20px;}
-        .brand-results{display:flex;gap:24px;}
-        .br-num{font-size:20px;font-weight:900;color:var(--dark);}
-        .br-label{font-size:9px;color:var(--gray);text-transform:uppercase;letter-spacing:1px;margin-top:3px;}
+        .brand-results{display:flex;align-items:flex-start;gap:clamp(10px,1.5vw,24px);flex-wrap:nowrap;width:100%;}\n        .brand-results>div{flex:1 1 0;min-width:0;}
+        .br-num{font-size:clamp(16px,1.6vw,20px);font-weight:900;color:var(--dark);white-space:nowrap;line-height:1.15;}
+        .br-label{font-size:clamp(7px,.7vw,9px);color:var(--gray);text-transform:uppercase;letter-spacing:.7px;margin-top:3px;line-height:1.35;}
 
         /* TOOLS */
         .tools-section{background:var(--light);}
