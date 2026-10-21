@@ -75,6 +75,8 @@
         .hero-tag::before{content:'';width:28px;height:2px;background:var(--accent);}
         .hero-summary{font-size:15px;color:var(--gray);line-height:1.8;margin-bottom:40px;}
         .hero-summary strong{color:var(--dark);font-weight:700;}
+        .hero-relocation{display:inline-flex;align-items:center;gap:8px;margin:-18px 0 32px;padding:9px 13px;border:1px solid rgba(0,0,0,0.12);border-radius:999px;font-size:10px;font-weight:800;letter-spacing:1.4px;color:var(--accent);background:rgba(255,255,255,0.55);}
+        .hero-relocation span:first-child{font-size:14px;line-height:1;}
         .hero-btns{display:flex;gap:16px;margin-bottom:50px;flex-wrap:wrap;}
         .btn-red{background:var(--accent);color:var(--butter);padding:16px 36px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:.3s;}
         .btn-red:hover{background:var(--accent-dark);transform:translateY(-3px);}
@@ -345,6 +347,7 @@
             }
             .swipe-hint::after{content:'→';color:var(--butter);}
 
+            .hero-relocation{margin:-20px 0 28px;font-size:9px;letter-spacing:1.1px;}
             .hero-btns{flex-direction:column;align-items:center;}
             .btn-cv{justify-content:center;width:100%;max-width:280px;}
         }
@@ -395,9 +398,15 @@
         <h1 style="font-size:clamp(32px,5vw,58px);font-weight:900;text-transform:uppercase;letter-spacing:-2px;line-height:1.05;margin-bottom:24px;">
             Ngo Tran<br><span style="color:var(--accent);">Anh Thu</span>
         </h1>
-        <p class="hero-summary" id="heroSummary">
-            Hello, I'm Anh Thu, a Digital Marketer with <strong>3+ years of experience</strong> in marketing and over <strong>2 years focused on digital</strong>. Passionate about <strong>paid media, analytics, and e-commerce</strong>, I enjoy solving problems, optimizing performance, and finding practical ways to help brands grow.
+        <p class="hero-summary" id="heroSummary"
+           data-en="I’m a Digital Marketer who loves turning data into growth. From <strong>Meta Ads and Google Ads</strong> to creative testing and conversion optimization, I focus on what really matters: <strong>better leads, smarter spending, and measurable results.</strong> I’ve worked across e-commerce, lifestyle, interior design, F&B, education, and immigration consulting — combining data, creativity, and performance insights to help brands reach the right audience and grow with purpose."
+           data-vi="Tôi là một Digital Marketer thích biến dữ liệu thành tăng trưởng thực tế. Từ <strong>Meta Ads và Google Ads</strong> đến thử nghiệm nội dung quảng cáo và tối ưu chuyển đổi, tôi tập trung vào những điều quan trọng: <strong>lead chất lượng hơn, chi tiêu hiệu quả hơn và kết quả đo lường được.</strong> Tôi đã làm việc trong các lĩnh vực thương mại điện tử, lifestyle, thiết kế nội thất, F&B, giáo dục và tư vấn định cư — kết hợp dữ liệu, sự sáng tạo và tư duy performance để giúp thương hiệu tiếp cận đúng khách hàng và phát triển đúng hướng.">
+            I’m a Digital Marketer who loves turning data into growth. From <strong>Meta Ads and Google Ads</strong> to creative testing and conversion optimization, I focus on what really matters: <strong>better leads, smarter spending, and measurable results.</strong> I’ve worked across e-commerce, lifestyle, interior design, F&B, education, and immigration consulting — combining data, creativity, and performance insights to help brands reach the right audience and grow with purpose.
         </p>
+        <div class="hero-relocation" role="note">
+            <span aria-hidden="true">🌍</span>
+            <span data-en="OPEN TO RELOCATION" data-vi="SẴN SÀNG CHUYỂN NƠI LÀM VIỆC">OPEN TO RELOCATION</span>
+        </div>
         <div class="hero-btns">
             <a href="#contact" class="btn-red" data-en="Get In Touch" data-vi="Liên hệ ngay">Get In Touch</a>
             <a href="#experience" class="btn-ghost" data-en="View Experience" data-vi="Xem kinh nghiệm">View Experience</a>
