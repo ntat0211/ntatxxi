@@ -75,7 +75,7 @@
         .hero-tag::before{content:'';width:28px;height:2px;background:var(--accent);}
         .hero-summary{font-size:15px;color:var(--gray);line-height:1.8;margin-bottom:40px;}
         .hero-summary strong{color:var(--dark);font-weight:700;}
-        .hero-relocation{display:inline-flex;align-items:center;gap:8px;margin:-18px 0 32px;padding:9px 13px;border:1px solid rgba(0,0,0,0.12);border-radius:999px;font-size:10px;font-weight:800;letter-spacing:1.4px;color:var(--accent);background:rgba(255,255,255,0.55);}
+        .hero-relocation{display:inline-flex;align-items:center;gap:8px;width:max-content;max-width:100%;margin:-18px 0 32px;padding:9px 13px;border:1px solid rgba(0,0,0,0.12);border-radius:999px;font-size:10px;font-weight:800;letter-spacing:1.4px;color:var(--accent);background:rgba(255,255,255,0.55);}
         .hero-relocation span:first-child{font-size:14px;line-height:1;}
         .hero-btns{display:flex;gap:16px;margin-bottom:50px;flex-wrap:wrap;}
         .btn-red{background:var(--accent);color:var(--butter);padding:16px 36px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:.3s;}
@@ -95,9 +95,9 @@
         .btn-cv:active{transform:translateY(0);opacity:.85;}
         .btn-cv svg{flex-shrink:0;}
         .btn-cv.loading{opacity:.7;pointer-events:none;}
-        .hero-stats{display:flex;gap:56px;padding-top:32px;border-top:1px solid rgba(0,0,0,0.06);}
-        .stat-num{font-size:32px;font-weight:900;color:var(--accent);line-height:1;}
-        .stat-label{font-size:9px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:2px;margin-top:6px;}
+        .hero-stats{display:flex;gap:56px;padding-top:32px;border-top:1px solid rgba(0,0,0,0.06);flex-wrap:nowrap;align-items:flex-start;}
+        .stat-num{font-size:clamp(25px,2.5vw,32px);font-weight:900;color:var(--accent);line-height:1;white-space:nowrap;}
+        .stat-label{font-size:9px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:2px;margin-top:6px;white-space:nowrap;}
 
         /* MARQUEE — navy bg, butter text */
         .marquee-strip{background:var(--accent);padding:14px 0;overflow:hidden;white-space:nowrap;}
@@ -167,7 +167,7 @@
 
         .exp-toggle-title-col{flex:1;}
         .exp-jobtitle{font-size:19px;font-weight:800;text-transform:uppercase;letter-spacing:-.3px;margin-bottom:4px;}
-        .exp-badge-inline{display:inline-block;background:var(--accent);color:var(--butter);padding:2px 10px;font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;}
+        .exp-badge-inline{width:max-content;max-width:100%;display:inline-block;background:var(--accent);color:var(--butter);padding:2px 10px;font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;}
 
         .exp-toggle-icon{
             width:36px;height:36px;
@@ -354,8 +354,8 @@
 
         @media(max-width:480px){
             .hero-photo{width:180px;height:230px;}
-            .hero-stats{gap:20px;}
-            .stat-num{font-size:26px;}
+            .hero-stats{gap:clamp(12px,3vw,32px);width:100%;justify-content:space-between;}
+            .stat-num{font-size:clamp(22px,5vw,26px);}.stat-label{font-size:8px;letter-spacing:1px;}
             nav{padding:14px 20px;}
         }
 
@@ -517,32 +517,6 @@
             <div class="exp-toggle-header" onclick="toggleExp(this)">
                 <div class="exp-toggle-left">
                     <div class="exp-toggle-date-col">
-                        <div class="exp-date">07/2024 — 08/2026</div>
-                        <div class="exp-co">Bonario Vietnam<br>Ordinaire · Reverie</div>
-                    </div>
-                    <div class="exp-toggle-title-col">
-                        <div class="exp-jobtitle" data-en="Senior Digital Marketing Executive" data-vi="Senior Digital Marketing Executive">Senior Digital Marketing Executive</div>
-                        <span class="exp-badge-inline" data-en="Current Role" data-vi="Vị trí hiện tại">Current Role</span>
-                    </div>
-                </div>
-                <div class="exp-toggle-icon">+</div>
-            </div>
-            <div class="exp-body">
-                <ul class="exp-bullets">
-                    <li data-en="Managed <strong>Meta Ads and Google Ads</strong> campaigns with monthly budgets of <strong>50–100M VND</strong>, generating <strong>200+ qualified leads per month</strong>" data-vi="Quản lý chiến dịch <strong>Meta Ads và Google Ads</strong> với ngân sách hàng tháng <strong>50–100 triệu VND</strong>, tạo ra <strong>500+ khách hàng tiềm năng/tháng</strong>">Managed <strong>Meta Ads and Google Ads</strong> campaigns with monthly budgets of <strong>50–100M VND</strong>, generating <strong>500+ qualified leads per month</strong></li>
-                    <li data-en="Achieved <strong>100%+ YoY growth</strong> in online revenue through paid media, website optimization, and funnel improvements" data-vi="Đạt <strong>tăng trưởng doanh thu online 100%+ YoY</strong> thông qua paid media, tối ưu website và cải thiện phễu">Achieved <strong>100%+ YoY growth</strong> in online revenue through paid media, website optimization, and funnel improvements</li>
-                    <li data-en="Increased qualified lead conversion rate from <strong>15% to nearly 30%</strong> through audience targeting and conversion-focused strategies" data-vi="Tăng tỷ lệ chuyển đổi khách hàng tiềm năng từ <strong>15% lên gần 30%</strong> thông qua nhắm mục tiêu đối tượng và chiến lược tập trung vào chuyển đổi">Increased qualified lead conversion rate from <strong>15% to nearly 30%</strong> through audience targeting and conversion-focused strategies</li>
-                    <li data-en="Reduced <strong>Cost per Lead (CPL) by 20–30%</strong> while maintaining stable campaign performance" data-vi="Giảm <strong>Chi phí mỗi Lead (CPL) 20–30%</strong> trong khi duy trì hiệu suất chiến dịch ổn định">Reduced <strong>Cost per Lead (CPL) by 20–30%</strong> while maintaining stable campaign performance</li>
-                    <li data-en="Built and optimized the <strong>Reverie website on Odoo</strong>, improving user experience and supporting online sales growth" data-vi="Xây dựng và tối ưu hóa <strong>website Reverie trên Odoo</strong>, cải thiện trải nghiệm người dùng và hỗ trợ tăng trưởng doanh số online">Built and optimized the <strong>Reverie website on Odoo</strong>, improving user experience and supporting online sales growth</li>
-                    <li data-en="Implemented <strong>GA4 tracking and automation systems</strong> to support data-driven decision-making" data-vi="Triển khai <strong>hệ thống theo dõi GA4 và tự động hóa</strong> để hỗ trợ ra quyết định dựa trên dữ liệu">Implemented <strong>GA4 tracking and automation systems</strong> to support data-driven decision-making</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="exp-row fade-in">
-            <div class="exp-toggle-header" onclick="toggleExp(this)">
-                <div class="exp-toggle-left">
-                    <div class="exp-toggle-date-col">
                         <div class="exp-date" data-en="09/2026 — Present" data-vi="09/2026 — Hiện tại">09/2026 — Present</div>
                         <div class="exp-co">US Direct IMM</div>
                     </div>
@@ -559,6 +533,32 @@
                     <li data-en="Manage paid media activities across Meta Ads and Google Ads, refining audience targeting, campaign messaging, and lead forms" data-vi="Quản lý hoạt động quảng cáo trả phí trên Meta Ads và Google Ads, tối ưu nhắm chọn đối tượng, thông điệp chiến dịch và biểu mẫu khách hàng tiềm năng">Manage paid media activities across Meta Ads and Google Ads, refining audience targeting, campaign messaging, and lead forms</li>
                     <li data-en="Develop ad content and creatives, review lead quality, and improve campaign performance through ongoing testing and optimization" data-vi="Phát triển nội dung và hình ảnh quảng cáo, đánh giá chất lượng lead và cải thiện hiệu quả chiến dịch thông qua thử nghiệm và tối ưu liên tục">Develop ad content and creatives, review lead quality, and improve campaign performance through ongoing testing and optimization</li>
                     <li data-en="Support tracking and reporting to connect campaign performance with lead quality and sales follow-up" data-vi="Hỗ trợ tracking và báo cáo để liên kết hiệu quả chiến dịch với chất lượng lead và hoạt động chăm sóc khách hàng của đội ngũ sales">Support tracking and reporting to connect campaign performance with lead quality and sales follow-up</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="exp-row fade-in">
+            <div class="exp-toggle-header" onclick="toggleExp(this)">
+                <div class="exp-toggle-left">
+                    <div class="exp-toggle-date-col">
+                        <div class="exp-date">07/2024 — 08/2026</div>
+                        <div class="exp-co">Bonario Vietnam<br>Ordinaire · Reverie</div>
+                    </div>
+                    <div class="exp-toggle-title-col">
+                        <div class="exp-jobtitle" data-en="Senior Digital Marketing Executive" data-vi="Senior Digital Marketing Executive">Senior Digital Marketing Executive</div>
+                        <span class="exp-badge-inline" data-en="Previous Role" data-vi="Vị trí trước đây">Previous Role</span>
+                    </div>
+                </div>
+                <div class="exp-toggle-icon">+</div>
+            </div>
+            <div class="exp-body">
+                <ul class="exp-bullets">
+                    <li data-en="Managed <strong>Meta Ads and Google Ads</strong> campaigns with monthly budgets of <strong>50–100M VND</strong>, generating <strong>200+ qualified leads per month</strong>" data-vi="Quản lý chiến dịch <strong>Meta Ads và Google Ads</strong> với ngân sách hàng tháng <strong>50–100 triệu VND</strong>, tạo ra <strong>500+ khách hàng tiềm năng/tháng</strong>">Managed <strong>Meta Ads and Google Ads</strong> campaigns with monthly budgets of <strong>50–100M VND</strong>, generating <strong>500+ qualified leads per month</strong></li>
+                    <li data-en="Achieved <strong>100%+ YoY growth</strong> in online revenue through paid media, website optimization, and funnel improvements" data-vi="Đạt <strong>tăng trưởng doanh thu online 100%+ YoY</strong> thông qua paid media, tối ưu website và cải thiện phễu">Achieved <strong>100%+ YoY growth</strong> in online revenue through paid media, website optimization, and funnel improvements</li>
+                    <li data-en="Increased qualified lead conversion rate from <strong>15% to nearly 30%</strong> through audience targeting and conversion-focused strategies" data-vi="Tăng tỷ lệ chuyển đổi khách hàng tiềm năng từ <strong>15% lên gần 30%</strong> thông qua nhắm mục tiêu đối tượng và chiến lược tập trung vào chuyển đổi">Increased qualified lead conversion rate from <strong>15% to nearly 30%</strong> through audience targeting and conversion-focused strategies</li>
+                    <li data-en="Reduced <strong>Cost per Lead (CPL) by 20–30%</strong> while maintaining stable campaign performance" data-vi="Giảm <strong>Chi phí mỗi Lead (CPL) 20–30%</strong> trong khi duy trì hiệu suất chiến dịch ổn định">Reduced <strong>Cost per Lead (CPL) by 20–30%</strong> while maintaining stable campaign performance</li>
+                    <li data-en="Built and optimized the <strong>Reverie website on Odoo</strong>, improving user experience and supporting online sales growth" data-vi="Xây dựng và tối ưu hóa <strong>website Reverie trên Odoo</strong>, cải thiện trải nghiệm người dùng và hỗ trợ tăng trưởng doanh số online">Built and optimized the <strong>Reverie website on Odoo</strong>, improving user experience and supporting online sales growth</li>
+                    <li data-en="Implemented <strong>GA4 tracking and automation systems</strong> to support data-driven decision-making" data-vi="Triển khai <strong>hệ thống theo dõi GA4 và tự động hóa</strong> để hỗ trợ ra quyết định dựa trên dữ liệu">Implemented <strong>GA4 tracking and automation systems</strong> to support data-driven decision-making</li>
                 </ul>
             </div>
         </div>
