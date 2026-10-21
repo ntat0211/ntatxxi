@@ -302,9 +302,15 @@
             .result-card:last-child{margin-right:20px;}
             .result-num{font-size:40px;}
 
-            .exp-toggle-left{flex-direction:column;gap:4px;}
-            .exp-toggle-date-col{flex:0 0 auto;}
-            .exp-jobtitle{font-size:14px;}
+            .exp-toggle-left{flex-direction:column;gap:8px;min-width:0;width:100%;}
+            .exp-toggle-date-col{flex:0 0 auto;min-width:0;width:100%;}
+            .exp-date{font-size:9px;letter-spacing:1.2px;line-height:1.6;overflow-wrap:anywhere;}
+            .exp-co{font-size:10px;overflow-wrap:anywhere;}
+            .exp-toggle-title-col{min-width:0;width:100%;}
+            .exp-jobtitle{font-size:14px;line-height:1.45;overflow-wrap:anywhere;}
+            .exp-badge-inline{max-width:100%;white-space:normal;line-height:1.5;overflow-wrap:anywhere;}
+            .exp-toggle-header{gap:12px;padding:22px 0;}
+            .exp-toggle-icon{flex:0 0 24px;}
             .exp-body.open-mobile{max-height:600px;padding:0 0 24px 0 !important;}
 
             .skills-grid{grid-template-columns:1fr;}
@@ -528,12 +534,12 @@
             <div class="exp-toggle-header" onclick="toggleExp(this)">
                 <div class="exp-toggle-left">
                     <div class="exp-toggle-date-col">
-                        <div class="exp-date">Freelance · 07.2026 — <span data-en="Present" data-vi="Hiện tại">Present</span></div>
+                        <div class="exp-date">Freelance · 07.2026 – <span data-en="Present" data-vi="Hiện tại">Present</span></div>
                         <div class="exp-co">Restructure Connect</div>
                     </div>
                     <div class="exp-toggle-title-col">
                         <div class="exp-jobtitle" data-en="Freelance Paid Ads Specialist" data-vi="Freelance Paid Ads Specialist">Freelance Paid Ads Specialist</div>
-                        <span class="exp-badge-inline" data-en="Australian Market" data-vi="Thị trường Úc">Australian Market</span>
+                        <span class="exp-badge-inline" data-en="Finance · Australian Market" data-vi="Tài chính · Thị trường Úc">Finance · Australian Market</span>
                     </div>
                 </div>
                 <div class="exp-toggle-icon">+</div>
@@ -551,7 +557,7 @@
             <div class="exp-toggle-header" onclick="toggleExp(this)">
                 <div class="exp-toggle-left">
                     <div class="exp-toggle-date-col">
-                        <div class="exp-date">Freelance · 09.2026 — <span data-en="Present" data-vi="Hiện tại">Present</span></div>
+                        <div class="exp-date">Freelance · 09.2026 – <span data-en="Present" data-vi="Hiện tại">Present</span></div>
                         <div class="exp-co">Evergreen</div>
                     </div>
                     <div class="exp-toggle-title-col">
