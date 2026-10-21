@@ -57,7 +57,7 @@
             content:'';position:absolute;inset:0;
             background:radial-gradient(circle at 30% 70%, rgba(48,70,88,0.08) 0%, transparent 60%);
         }
-        .hero-left{flex-shrink:0;position:relative;z-index:1;}
+        .hero-left{flex:0 0 300px;display:flex;align-items:stretch;position:relative;z-index:1;}
         .hero-photo{
             width:300px;height:380px;
             border-radius:12px;
@@ -66,7 +66,7 @@
             box-shadow:20px 20px 0px rgba(48,70,88,0.14);
         }
         .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
-        .hero-right{flex:1;max-width:650px;position:relative;z-index:1;}
+        .hero-right{flex:1;max-width:650px;min-height:380px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:1;}
         .hero-tag{
             font-size:10px;font-weight:700;letter-spacing:4px;text-transform:uppercase;
             color:var(--accent);margin-bottom:20px;
@@ -263,7 +263,7 @@
         /* ===================== RESPONSIVE ===================== */
         @media(max-width:1024px){
             nav{padding:16px 32px;}
-            .hero{flex-direction:column;text-align:center;gap:48px;padding:140px 32px 80px;}
+            .hero{flex-direction:column;align-items:center;text-align:center;gap:40px;padding:140px 32px 80px;}\n            .hero-left{width:min(300px,100%);flex:0 0 auto;}\n            .hero-photo{height:380px;min-height:0;}\n            .hero-right{width:100%;min-height:0;}\n            .hero-name{white-space:normal !important;font-size:clamp(28px,7vw,46px) !important;letter-spacing:-1.5px !important;}
             .hero-tag{justify-content:center;}
             .hero-btns{justify-content:center;}
             .hero-stats{justify-content:center;}
@@ -348,7 +348,7 @@
             .swipe-hint::after{content:'→';color:var(--butter);}
 
             .hero-relocation{margin:-20px 0 28px;font-size:9px;letter-spacing:1.1px;}
-            .hero-btns{flex-direction:column;align-items:center;}
+            .hero-btns{flex-direction:column;align-items:center;}\n            .hero-name{font-size:clamp(25px,6.5vw,38px) !important;}
             .btn-cv{justify-content:center;width:100%;max-width:280px;}
         }
 
@@ -395,8 +395,8 @@
     </div>
     <div class="hero-right">
         <div class="hero-tag" data-en="Senior Digital Marketer" data-vi="Chuyên viên Marketing Kỹ thuật số">Senior Digital Marketer</div>
-        <h1 style="font-size:clamp(32px,5vw,58px);font-weight:900;text-transform:uppercase;letter-spacing:-2px;line-height:1.05;margin-bottom:24px;">
-            Ngo Tran<br><span style="color:var(--accent);">Anh Thu</span>
+        <h1 class="hero-name" style="font-size:clamp(28px,3.7vw,52px);font-weight:900;text-transform:uppercase;letter-spacing:-2px;line-height:1.05;margin-bottom:24px;white-space:nowrap;">
+            NGO TRAN <span style="color:var(--accent);">ANH THU</span>
         </h1>
         <p class="hero-summary" id="heroSummary"
            data-en="I’m a Digital Marketer who loves turning data into growth. From <strong>Meta Ads and Google Ads</strong> to creative testing and conversion optimization, I focus on what really matters: <strong>better leads, smarter spending, and measurable results.</strong> I’ve worked across e-commerce, lifestyle, interior design, F&B, education, and immigration consulting — combining data, creativity, and performance insights to help brands reach the right audience and grow with purpose."
@@ -517,7 +517,7 @@
             <div class="exp-toggle-header" onclick="toggleExp(this)">
                 <div class="exp-toggle-left">
                     <div class="exp-toggle-date-col">
-                        <div class="exp-date">07/2024 — <span data-en="Present" data-vi="Hiện tại">Present</span></div>
+                        <div class="exp-date">07/2024 — 08/2026</div>
                         <div class="exp-co">Bonario Vietnam<br>Ordinaire · Reverie</div>
                     </div>
                     <div class="exp-toggle-title-col">
@@ -543,7 +543,7 @@
             <div class="exp-toggle-header" onclick="toggleExp(this)">
                 <div class="exp-toggle-left">
                     <div class="exp-toggle-date-col">
-                        <div class="exp-date" data-en="Current" data-vi="Hiện tại">Current</div>
+                        <div class="exp-date" data-en="09/2026 — Present" data-vi="09/2026 — Hiện tại">09/2026 — Present</div>
                         <div class="exp-co">US Direct IMM</div>
                     </div>
                     <div class="exp-toggle-title-col">
