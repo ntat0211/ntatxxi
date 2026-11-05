@@ -213,7 +213,8 @@
         .brand-logo::after{content:'';position:absolute;bottom:-6px;left:0;width:24px;height:3px;background:var(--accent);}
         .brand-sector{font-size:8px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:16px;margin-top:14px;}
         .brand-desc{font-size:11px;color:var(--gray);line-height:1.8;margin-bottom:20px;}
-        .brand-results{display:flex;align-items:flex-start;gap:clamp(10px,1.5vw,24px);flex-wrap:nowrap;width:100%;margin-top:auto;padding-top:20px;}\n        .brand-results>div{flex:1 1 0;min-width:0;}
+        .brand-results{display:flex;align-items:flex-start;gap:clamp(10px,1.5vw,24px);flex-wrap:nowrap;width:100%;margin-top:auto;padding-top:20px;}
+        .brand-results>div{flex:1 1 0;min-width:0;}
         .br-num{font-size:clamp(16px,1.6vw,20px);font-weight:900;color:var(--dark);white-space:nowrap;line-height:1.15;}
         .br-label{font-size:clamp(6px,.58vw,8px);color:var(--gray);text-transform:uppercase;letter-spacing:.35px;margin-top:3px;line-height:1.2;white-space:nowrap;}
 
@@ -264,7 +265,11 @@
         /* ===================== RESPONSIVE ===================== */
         @media(max-width:1024px){
             nav{padding:16px 32px;}
-            .hero{flex-direction:column;align-items:center;text-align:center;gap:40px;padding:140px 32px 80px;}\n            .hero-left{width:min(300px,100%);flex:0 0 auto;}\n            .hero-photo{height:440px;min-height:0;}\n            .hero-right{width:100%;height:auto;min-height:0;gap:24px;}\n            .hero-name{white-space:normal !important;font-size:clamp(28px,7vw,46px) !important;letter-spacing:-1.5px !important;}
+            .hero{flex-direction:column;align-items:center;text-align:center;gap:40px;padding:140px 32px 80px;}
+            .hero-left{width:100%;flex:0 0 auto;display:flex;justify-content:center;align-items:center;margin:0 auto;}
+            .hero-photo{height:440px;min-height:0;}
+            .hero-right{width:100%;height:auto;min-height:0;gap:8px;justify-content:flex-start;align-items:center;}
+            .hero-name{white-space:normal !important;font-size:clamp(28px,7vw,46px) !important;letter-spacing:-1.5px !important;}
             .hero-tag{justify-content:center;}
             .hero-btns{justify-content:center;}
             .hero-stats{justify-content:center;}
@@ -288,8 +293,9 @@
             }
             .nav-links.active{display:flex;}
             .nav-right{gap:16px;}
-            .hero-relocation{display:inline-flex;align-self:center;justify-self:center;margin:0 auto;text-align:center;}
-            .hero-photo{width:200px;height:260px;}
+            .hero-summary{margin-bottom:0;}
+            .hero-tag{margin-bottom:0;justify-content:center;}.hero-name{margin-bottom:0 !important;}.hero-summary{margin:0;}.hero-relocation{display:inline-flex;align-self:center;justify-self:center;margin:0 auto -12px;text-align:center;position:relative;clear:both;}
+            .hero-photo{width:200px;height:260px;margin-left:auto;margin-right:auto;}
             .hero-stats{flex-wrap:wrap;gap:32px;justify-content:center;}
             section.content{padding:56px 20px;}
             .sec-title{font-size:26px;margin-bottom:32px;}
@@ -350,7 +356,8 @@
             .swipe-hint::after{content:'→';color:var(--butter);}
 
             .hero-relocation{margin:-20px 0 28px;font-size:9px;letter-spacing:1.1px;}
-            .hero-btns{flex-direction:column;align-items:center;}\n            .hero-name{font-size:clamp(25px,6.5vw,38px) !important;}
+            .hero-btns{flex-direction:column;align-items:center;}
+            .hero-name{font-size:clamp(25px,6.5vw,38px) !important;}
             .btn-cv{justify-content:center;width:100%;max-width:280px;}
         }
 
@@ -770,9 +777,9 @@
 <!-- CONTACT -->
 <section class="content contact" id="contact">
     <div class="section-inner">
-        <div class="sec-tag" data-en="Get In Touch" data-vi="Liên hệ">Get In Touch</div>
-        <h2 class="sec-title" data-en="Open to New Opportunities" data-vi="Sẵn sàng cho cơ hội mới">Open to New Opportunities</h2>
-        <p class="contact-copy" data-en="Open to new opportunities, senior roles, and interesting marketing challenges in Ho Chi Minh City." data-vi="Sẵn sàng cho các cơ hội mới, vị trí cấp cao và những thử thách marketing thú vị tại TP. Hồ Chí Minh.">Open to new opportunities, senior roles, and interesting marketing challenges in Ho Chi Minh City.</p>
+        <div class="sec-tag" data-en="Open to Relocation" data-vi="Sẵn sàng chuyển nơi làm việc">Open to Relocation</div>
+        <h2 class="sec-title" data-en="Ready for International Opportunities" data-vi="Sẵn sàng cho cơ hội quốc tế">Ready for International Opportunities</h2>
+        <p class="contact-copy" data-en="I’m open to relocation and international opportunities in Digital Marketing and Performance Marketing. Let’s connect and explore how I can contribute to your team." data-vi="Tôi sẵn sàng chuyển nơi làm việc và đón nhận các cơ hội quốc tế trong lĩnh vực Digital Marketing và Performance Marketing. Hãy kết nối để cùng trao đổi về cách tôi có thể đóng góp cho đội ngũ của bạn.">I’m open to relocation and international opportunities in Digital Marketing and Performance Marketing. Let’s connect and explore how I can contribute to your team.</p>
         <div class="contact-links">
             <a href="mailto:ngotrananhthu99@gmail.com" class="contact-link">
                 <span class="cl-icon">✉</span>
